@@ -1,6 +1,6 @@
 import React from 'react';
 import {Route, Redirect, Switch} from 'react-router-dom'; 
-import {Cart, NavBar, ProductCategory} from './components';
+import {CartButton, NavBar, Category} from './components';
 import StoreData from './dummyData/StoreData'
 
 function App() {
@@ -12,13 +12,14 @@ function App() {
         <NavBar />
         <Switch>
           <Route exact path='/' render={() => (<Redirect to='/home' />)} />
-          <Route exact path='/home' render={(props) => (<ProductCategory {...props}/>)} />
-          <Route path='/pizza' render={(props) => (<ProductCategory {...props} category={StoreData.Pizza}/>)} />
-          <Route path='/sides' render={(props) => (<ProductCategory category={StoreData.Sides} {...props}/>)} />
-          <Route path='/salads' render={(props) => (<ProductCategory category={StoreData.Salads} {...props}/>)} />
-          <Route path='/desserts' render={(props) => (<ProductCategory category={StoreData.Desserts} {...props}/>)} />
+          <Route exact path='/home' render={(props) => (<Category {...props}/>)} />
+          <Route path='/pizza' render={(props) => (<Category content={StoreData.Pizza} {...props} />)} />
+          <Route path='/sides' render={(props) => (<Category content={StoreData.Sides} {...props}/>)} />
+          <Route path='/salads' render={(props) => (<Category content={StoreData.Salads} {...props}/>)} />
+          <Route path='/desserts' render={(props) => (<Category content={StoreData.Desserts} {...props}/>)} />
+          <Route path='/myCart' render={(props) => (<Category {...props} />)} />
         </Switch>
-        <Cart />
+        <CartButton />
       </div>
     </div> 
   );
