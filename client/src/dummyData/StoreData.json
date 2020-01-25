@@ -1,0 +1,42 @@
+{
+    "Pizza": [
+        {
+            "name": "BYOP",
+            "products": ["BYOP"]
+        },
+        {
+            "name": "Specialty",
+            "products": ["Hawaiian", "BBQ Chick"]
+        }
+    ],
+    "Sides": [
+        {
+            "name": "Appetizers",
+            "products": ["Cheese Sticks", "Mozzarella Sticks"]
+        },
+        {
+            "name": "Sauce",
+            "products": ["Marinara", "Ranch"]
+        }
+    ],
+    "Salads": [
+        {
+            "name": "Vegetarian",
+            "products": ["Caesar", "Greek"]
+        },
+        {
+            "name": "Vegan",
+            "products": ["Garden", "Tabouli"]
+        }
+    ],
+    "Desserts": [
+        {
+            "name": "Premade",
+            "products": ["Cookies", "Brownies"]
+        },
+        {
+            "name": "Dessert Pizza",
+            "products": ["CinnaStix", "S'mores"]
+        }
+    ]
+}

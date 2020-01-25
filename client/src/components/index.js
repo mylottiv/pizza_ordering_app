@@ -4,3 +4,4 @@ export {default as ProductListing} from './ProductListing';
 export {default as ProductCategory} from './ProductCategory';
 export {default as ProductSubCategory} from './ProductSubCategory';
 export {default as NavBar} from './NavBar/';
+export {default as NavButton} from './NavButton/';

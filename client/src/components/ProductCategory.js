@@ -3,13 +3,14 @@ import {ProductSubCategory, ProductHeader} from '/'
 
 function ProductCategory(props) {
 
-  console.log(props);
+  const subCategories = props.category.map(subCategory => {
+    return (<ProductSubCategory subCategory={subCategory} />)
+  })
 
   return (
     <div className='flex flex-1 flex-col ml-1'>
       <ProductHeader name={props.location.pathname !== '/' ? props.location.pathname.substring(1) : 'Home'} />
-      <ProductSubCategory name='Build your own!' size={1}/>
-      <ProductSubCategory name='Specialty' size={2}/>
+      {subCategories}
     </div>
   )
 }
