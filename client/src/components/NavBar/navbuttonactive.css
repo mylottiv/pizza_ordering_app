@@ -1,0 +1,3 @@
+.active-navbar-button {
+    @apply bg-black text-white;
+};

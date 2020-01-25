@@ -610,6 +610,29 @@ video {
   }
 }
 
+.navbar-button {
+  flex: 1 1 0%;
+  text-align: center;
+  display: inline-block;
+  border-radius: 0.25rem;
+  color: #000;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  font-weight: 700;
+}
+
+.navbar-button:hover {
+  border-color: #edf2f7;
+  background-color: #edf2f7;
+}
+
+.active-navbar-button {
+  background-color: #000;
+  color: #fff;
+};
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -39297,6 +39320,3 @@ video {
     z-index: auto;
   }
 }
-
-
-
