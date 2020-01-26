@@ -1,3 +1,4 @@
+export {default as ViewRouter} from './ViewRouter';
 export {default as CartButton} from './CartButton';
 export {default as CartItem} from './CartItem';
 export {default as CategoryHeader} from './CategoryHeader';
@@ -7,3 +8,4 @@ export {default as SubCategory} from './SubCategory';
 export {default as SubCategoryHeader} from './SubCategoryHeader';
 export {default as NavBar} from './NavBar/';
 export {default as NavButton} from './NavButton/';
+export {CartContext, CartProvider} from './contexts/CartContext.js';

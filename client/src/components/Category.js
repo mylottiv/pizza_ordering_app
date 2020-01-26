@@ -1,6 +1,5 @@
 import React from 'react';
 import {SubCategory, CategoryHeader} from '/'
-import dummyCart from '../dummyData/CartData.json'
 
 function Category(props) {
 
@@ -26,7 +25,7 @@ function Category(props) {
     return (      
       <div className='flex flex-1 flex-col ml-1'>
         <CategoryHeader name='My Cart' />
-        <SubCategory content={dummyCart} />
+        <SubCategory content={props.content} />
         <SubCategory content={{name: 'CHECKOUT'}} />
       </div>
     )
