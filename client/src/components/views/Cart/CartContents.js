@@ -9,7 +9,7 @@ function CartContents({cart}) {
   
     return (
       <CategoryLayout name='In Your Cart:'>
-        <div className='flex flex-col'>
+        <div className='flex flex-col mb-2'>
             {renderContent}
         </div>
       </CategoryLayout>

@@ -3,7 +3,7 @@ import MainHeader from './MainHeader';
 
 function MainLayout(props) {
     return(
-        <div className='flex flex-1 flex-col ml-2 font-serif'>
+        <div className='flex flex-1 flex-col ml-1 font-serif'>
             <MainHeader />
             {props.children}
         </div>

@@ -6,7 +6,7 @@ function ProductCard(props) {
     const {cartDispatch} = useContext(CartContext);
 
     return (
-      <div className="flex flex-col rounded bg-gray-100 px-1 py-1 m-5">
+      <div className="flex flex-col rounded bg-gray-100 p-3 mx-3 my-2">
         <div className="w-64 rounded overflow-hidden shadow-lg">
           <img className="w-full h-48" src="https://i2.wp.com/lifemadesimplebakes.com/wp-content/uploads/2017/04/Garden-Veggie-Pizza-1.jpg" alt="Sunset in the mountains"></img>
           <div className="px-6 py-4">

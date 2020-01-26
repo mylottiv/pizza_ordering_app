@@ -9,8 +9,10 @@ function NavButton(props) {
             ? '/home'
             : `/myCart`;
 
+
+    // No top margins for first item in list
     return (
-        <li className="flex px-8">
+        <li className='flex px-8 my-2'>
             <NavLink className="navbar-button" activeClassName="active-navbar-button" exact to={route}>
                 <span className='text-3xl font-serif font-extrabold text-white'>{props.children}</span>
             </NavLink>

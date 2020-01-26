@@ -1,5 +1,5 @@
 .navbar-button {
-    @apply flex-1 text-center inline-block rounded-full text-black py-1 px-3 my-2 font-bold;
+    @apply flex-1 text-center inline-block rounded-full text-black py-1 px-3 font-bold;
 }
 
 .navbar-button:hover {
