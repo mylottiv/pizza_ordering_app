@@ -1,6 +1,6 @@
 import React from 'react';
 
-function SubCategoryHeader(props) {
+function CategoryHeader(props) {
     return (
       <div className='flex flex-row'>
         <h1 className='flex-1 text-2xl font-bold text-center'>{props.name}</h1>
@@ -8,4 +8,4 @@ function SubCategoryHeader(props) {
     )
   }
 
-export default SubCategoryHeader
+export default CategoryHeader

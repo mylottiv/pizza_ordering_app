@@ -2,7 +2,7 @@
 
 @import "tailwindcss/components";
 
-@import "../components/NavButton/navbutton.css";
-@import "../components/NavButton/navbuttonactive.css";
+@import "../components/shared/NavBar/NavButton/navbutton.css";
+@import "../components/shared/NavBar/NavButton/navbuttonactive.css";
 
 @import "tailwindcss/utilities";

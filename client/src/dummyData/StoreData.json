@@ -1,5 +1,5 @@
 {
-    "Pizza": [
+    "pizza": [
         {
             "name": "BYOP",
             "products": ["BYOP"]
@@ -9,7 +9,7 @@
             "products": ["Hawaiian", "BBQ Chick"]
         }
     ],
-    "Sides": [
+    "sides": [
         {
             "name": "Appetizers",
             "products": ["Cheese Sticks", "Mozzarella Sticks"]
@@ -19,7 +19,7 @@
             "products": ["Marinara", "Ranch"]
         }
     ],
-    "Salads": [
+    "salads": [
         {
             "name": "Vegetarian",
             "products": ["Caesar", "Greek"]
@@ -29,7 +29,7 @@
             "products": ["Garden", "Tabouli"]
         }
     ],
-    "Desserts": [
+    "desserts": [
         {
             "name": "Premade",
             "products": ["Cookies", "Brownies"]

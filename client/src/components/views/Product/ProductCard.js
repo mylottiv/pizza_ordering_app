@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
-import { CartContext } from './contexts/CartContext';
+import { CartContext } from '../../contexts/CartContext';
 
-function ProductListing(props) {
+function ProductCard(props) {
 
     const {cartDispatch} = useContext(CartContext);
 
@@ -25,4 +25,4 @@ function ProductListing(props) {
     )
   }
 
-export default ProductListing;
+export default ProductCard;

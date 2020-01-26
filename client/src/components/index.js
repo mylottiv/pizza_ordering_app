@@ -1,11 +1,7 @@
-export {default as ViewRouter} from './ViewRouter';
-export {default as CartButton} from './CartButton';
-export {default as CartItem} from './CartItem';
-export {default as CategoryHeader} from './CategoryHeader';
-export {default as ProductListing} from './ProductListing';
-export {default as Category} from './Category';
-export {default as SubCategory} from './SubCategory';
-export {default as SubCategoryHeader} from './SubCategoryHeader';
-export {default as NavBar} from './NavBar/';
-export {default as NavButton} from './NavButton/';
-export {CartContext, CartProvider} from './contexts/CartContext.js';
+export {CartContext, CartProvider} from './contexts/CartContext';
+export {default as MainLayout} from './layouts/Main';
+export {default as CategoryLayout} from './layouts/Category';
+export {default as ViewRouter} from './views';
+export {default as CartButton} from './shared/CartButton';
+export {default as Category} from './shared/Category';
+export {default as NavBar} from './shared/NavBar/';
