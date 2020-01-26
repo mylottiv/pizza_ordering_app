@@ -1,18 +1,20 @@
 import React from 'react';
-import {Category, MainLayout} from '../'
+import {Category, ContentLayout, MainLayout} from '../'
 
 function Home(props) {
 
   // Homepage View
     return (
-      <MainLayout name='Home' >
-          <Category content={{name: 'HOME TEST'}} />
-          <Category content={{name: 'HOME TEST'}} />
-          <Category content={{name: 'HOME TEST'}} />
-          <Category content={{name: 'HOME TEST'}} />
-          <Category content={{name: 'HOME TEST'}} />
-          <Category content={{name: 'HOME TEST'}} />
-      </MainLayout>
+        <MainLayout>
+            <ContentLayout name='Home' >
+                <Category content={{name: 'HOME TEST'}} />
+                <Category content={{name: 'HOME TEST'}} />
+                <Category content={{name: 'HOME TEST'}} />
+                <Category content={{name: 'HOME TEST'}} />
+                <Category content={{name: 'HOME TEST'}} />
+                <Category content={{name: 'HOME TEST'}} />
+            </ContentLayout>
+        </MainLayout>
     )
 }
 

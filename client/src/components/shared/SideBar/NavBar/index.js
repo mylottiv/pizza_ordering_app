@@ -1,16 +1,16 @@
 import React from 'react';
-import {default as NavButton} from './NavButton'
+import NavButton from './NavButton'
 
 function NavBar(props) {
-    return (
-    <ul className="flex flex-col w-56 bg-green-600 my-1">
+  return (
+    <ul className='flex-1 w-56 h-full bg-red-700'>
       <NavButton>Home</NavButton>
       <NavButton type='product'>Pizza</NavButton>
       <NavButton type='product'>Sides</NavButton>
       <NavButton type='product'>Salads</NavButton>
       <NavButton type='product'>Desserts</NavButton>
     </ul>
-    )
+  )
 }
 
 export default NavBar;

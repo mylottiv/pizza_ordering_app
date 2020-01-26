@@ -614,7 +614,7 @@ video {
   flex: 1 1 0%;
   text-align: center;
   display: inline-block;
-  border-radius: 0.25rem;
+  border-radius: 9999px;
   color: #000;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
@@ -624,8 +624,8 @@ video {
 }
 
 .navbar-button:hover {
-  border-color: #edf2f7;
-  background-color: #edf2f7;
+  border-color: #2f855a;
+  background-color: #2f855a;
 }
 
 .active-navbar-button {

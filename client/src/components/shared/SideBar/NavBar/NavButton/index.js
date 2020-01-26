@@ -10,9 +10,9 @@ function NavButton(props) {
             : `/myCart`;
 
     return (
-        <li className="flex flex-row my-2">
+        <li className="flex px-8">
             <NavLink className="navbar-button" activeClassName="active-navbar-button" exact to={route}>
-                {props.children}
+                <span className='text-3xl font-serif font-extrabold text-white'>{props.children}</span>
             </NavLink>
         </li>
     )

@@ -1,5 +1,5 @@
 import React from 'react';
-import {MainLayout} from '../..';
+import {ContentLayout, MainLayout} from '../..';
 import ProductList from './ProductList';
 
 function Product(props) {
@@ -11,8 +11,10 @@ function Product(props) {
       console.log('TYPE IS', props.match.params.type);
     
       return (
-        <MainLayout name={props.match.params.type.substring(0,1).toUpperCase() + props.match.params.type.substring(1)}>
-          {categories}
+        <MainLayout>
+          <ContentLayout name={props.match.params.type.substring(0,1).toUpperCase() + props.match.params.type.substring(1)}>
+            {categories}
+          </ContentLayout>
         </MainLayout>
     )
 }
