@@ -1,21 +1,20 @@
 import React, {useContext} from 'react';
 import {Switch, Route, Redirect} from 'react-router-dom';
 import {CartContext, Category} from './';
-import StoreData from '../dummyData/StoreData.json';
 
 function ViewRouter(props) {
 
-    const dummyCart = useContext(CartContext);
+    const {cartState, storeData} = useContext(CartContext);
 
     return (
         <Switch>
             <Route exact path='/' render={() => (<Redirect to='/home' />)} />
             <Route exact path='/home' render={(props) => (<Category {...props}/>)} />
-            <Route path='/pizza' render={(props) => (<Category content={StoreData.Pizza} {...props} />)} />
-            <Route path='/sides' render={(props) => (<Category content={StoreData.Sides} {...props}/>)} />
-            <Route path='/salads' render={(props) => (<Category content={StoreData.Salads} {...props}/>)} />
-            <Route path='/desserts' render={(props) => (<Category content={StoreData.Desserts} {...props}/>)} />
-            <Route path='/myCart' render={(props) => (<Category content={dummyCart} {...props} />)} />
+            <Route path='/pizza' render={(props) => (<Category content={storeData.Pizza} {...props} />)} />
+            <Route path='/sides' render={(props) => (<Category content={storeData.Sides} {...props}/>)} />
+            <Route path='/salads' render={(props) => (<Category content={storeData.Salads} {...props}/>)} />
+            <Route path='/desserts' render={(props) => (<Category content={storeData.Desserts} {...props}/>)} />
+            <Route path='/myCart' render={(props) => (<Category content={cartState} {...props} />)} />
         </Switch>
     )
 }

@@ -1,4 +1,16 @@
 {
     "name": "Cart Contents",
-    "products": ["Large Cheese", "Calamari Rings", "Dr Pepper"]
+    "products": [
+        {
+            "name": "Large Cheese",
+            "quantity": 2
+        }, 
+        {
+            "name": "Calamari Rings",
+            "quantity": 1
+        },         
+        {
+            "name": "Dr Pepper",
+            "quantity": 2
+        }]
 }

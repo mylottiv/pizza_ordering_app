@@ -1,6 +1,10 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import { CartContext } from './contexts/CartContext';
 
 function ProductListing(props) {
+
+    const {cartDispatch} = useContext(CartContext);
+
     return (
       <div className="flex flex-col rounded bg-gray-100 px-1 py-1 m-5">
         <div className="w-64 rounded overflow-hidden shadow-lg">
@@ -12,7 +16,7 @@ function ProductListing(props) {
             </p>
           </div>
           <div className="flex flex-row-reverse px-6 py-4 items-right">
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" onClick={() => cartDispatch({type: 'add_item_to_cart', payload: props.name})}>
               Order
             </button>
           </div>
