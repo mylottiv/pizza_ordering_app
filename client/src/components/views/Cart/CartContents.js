@@ -1,11 +1,11 @@
 import React from 'react';
-import {CategoryLayout} from '../../'
-import CartItem from './CartItem';
+import {CategoryLayout} from '../../';
+import {default as CartItem} from "./CartItem";
 
 function CartContents({cart}) {
 
     // Populates with Cart Items
-    const renderContent = cart.products.map((product) => (<CartItem name={product.name} />))
+    const renderContent = cart.items.map((item) => (<CartItem item={item} />))
   
     return (
       <CategoryLayout name='In Your Cart:'>

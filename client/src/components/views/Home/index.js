@@ -1,5 +1,6 @@
 import React from 'react';
-import {Category, ContentLayout, MainLayout} from '../'
+import {Category, ContentLayout, MainLayout} from '../..';
+import CouponList from './CouponList';
 
 function Home(props) {
 
@@ -7,7 +8,7 @@ function Home(props) {
     return (
         <MainLayout>
             <ContentLayout name='Home' >
-                <Category content={{name: 'HOME TEST'}} />
+                <CouponList content={['BOGO', '50% off']}/>
                 <Category content={{name: 'HOME TEST'}} />
                 <Category content={{name: 'HOME TEST'}} />
                 <Category content={{name: 'HOME TEST'}} />
@@ -18,4 +19,4 @@ function Home(props) {
     )
 }
 
-export default Home;
+export default Home

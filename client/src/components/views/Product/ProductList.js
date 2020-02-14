@@ -5,7 +5,7 @@ import ProductCard from './ProductCard';
 function ProductList({content}) {
 
     // Populates with Product Cards
-    const renderContent = content.products.map((product) => (<ProductCard name={product.name} />))
+    const renderContent = content.products.map((product) => (<ProductCard name={product} />))
     
     return (
         <CategoryLayout name={content.name}>

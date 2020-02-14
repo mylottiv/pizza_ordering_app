@@ -1,16 +1,30 @@
 {
     "name": "Cart Contents",
-    "products": [
+    "items": [
         {
-            "name": "Large Cheese",
+            "productName": "Large Cheese",
             "quantity": 2
         }, 
         {
-            "name": "Calamari Rings",
+            "productName": "Calamari Rings",
             "quantity": 1
         },         
         {
-            "name": "Dr Pepper",
+            "productName": "Dr Pepper",
             "quantity": 2
-        }]
+        },
+        {
+            "couponName": "Buy One Get One Free",
+            "couponItems": [
+                {
+                    "productName": "Medium Pepperoni",
+                    "quantity": 1
+                },
+                {
+                    "productName": "Medium Sausage",
+                    "quantity": 1
+                }
+            ]
+        }
+    ]
 }

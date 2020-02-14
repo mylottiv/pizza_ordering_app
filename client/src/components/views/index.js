@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import {Switch, Route, Redirect} from 'react-router-dom';
-import Cart from './Cart';
 import Home from './Home';
+import Cart from './Cart';
 import Product from './Product';
 import {CartContext} from '..';
 

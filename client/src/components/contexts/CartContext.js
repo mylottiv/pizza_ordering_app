@@ -17,18 +17,22 @@ export const CartProvider = (props) => {
     // Reducer object reference for manipulating Cart
     const cartReference = {
 
-        'add_item_to_cart': (itemName, cart) => {
-            const itemIndex = cart.products.findIndex(item2 => itemName === item2.name)
+        'add_item_to_cart': ({itemName, type}, cart) => {
+
+            console.log(cart)
+
+            const itemIndex = cart.items.findIndex(item2 => itemName === item2.name)
 
             // If new item, add new entry for item to cart
             if (itemIndex === -1)
             {
-                return {...cart, products: [...cart.products, {name: itemName, quantity: 0}]}
+                const newItem = (type === 'product') ? {productproductName: itemName, quantity: 0} : {couponName: itemName, couponItems: [{productName: itemName, quantity: 0}, {productName: itemName, quantity: 0}]}
+                return {...cart, items: [...cart.items, newItem]}
             }
 
             // Otherwise, increase quantity of relevant item entry
-            console.log('index error', itemIndex);
-            cart.products[itemIndex].quantity += 1;
+            console.log('item already in cart', itemIndex);
+            cart.items[itemIndex].quantity += 1;
             return {...cart}
         },
 
@@ -36,7 +40,7 @@ export const CartProvider = (props) => {
         'remove_item_from_cart': (itemId, cart) => {
 
             // Return cart with remove item filtered out
-            return {...cart, products: cart.products.filter(item2 => item2.name !== itemId)}
+            return {...cart, products: cart.items.filter(item2 => item2.name !== itemId)}
 
         },
         
@@ -46,8 +50,8 @@ export const CartProvider = (props) => {
         'update_item_in_cart': (updatedItem, cart) => {
 
             // Return cart with new version of item entry
-            const itemIndex = cart.products.findIndex(item => updatedItem.name === item.name);
-            cart.products[itemIndex] = updatedItem;
+            const itemIndex = cart.items.findIndex(item => updatedItem.name === item.name);
+            cart.items[itemIndex] = updatedItem;
             return {...cart}
         }
     }
