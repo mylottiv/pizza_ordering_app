@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductItem from './ProductItem';
-import {CouponItemLayout} from '../../../'
+import {CouponItemCartLayout} from '../../../'
 
 function CouponItem({name, items}) {
 
@@ -10,9 +10,9 @@ function CouponItem({name, items}) {
         )
     })
     return (
-        <CouponItemLayout name={name}>
+        <CouponItemCartLayout name={name}>
             {couponProducts}
-        </CouponItemLayout>
+        </CouponItemCartLayout>
     )
 }
 

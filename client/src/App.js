@@ -1,5 +1,5 @@
 import React from 'react';
-import {CartButton, SideBar, CartProvider, ViewRouter} from './components';
+import {CartButton, SideBar, CartProvider, ViewRouter, OrderModal} from './components';
 
 function App() {
 
@@ -12,7 +12,8 @@ function App() {
         backgroundAttachment: 'fixed'
       }
     }>
-      <div className='container mx-auto px-5'>
+      <OrderModal open={true}/>
+      <div className='container mx-8 px-5'>
         <div className='flex flex-row'>
           <SideBar />
           <CartProvider>
@@ -21,7 +22,7 @@ function App() {
           </CartProvider>
         </div>
       </div>
-    </div> 
+    </div>
   );
 }
 

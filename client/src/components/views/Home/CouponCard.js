@@ -16,6 +16,7 @@ function CouponCard({name}) {
             </p>
           </div>
           <div className="flex flex-row-reverse px-6 py-4 items-right">
+            {/* <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" onClick={() => cartDispatch({type: 'add_item_to_cart', payload: {itemName: name, type: 'coupon'}})}> */}
             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" onClick={() => cartDispatch({type: 'add_item_to_cart', payload: {itemName: name, type: 'coupon'}})}>
               Order
             </button>

@@ -1,2 +1,2 @@
-export {default as CouponItemLayout} from './CouponItemLayout';
-export {default as ProductItemLayout} from './ProductItem';
+export {default as CouponItemCartLayout} from './CouponItemLayout';
+export {default as ProductItemCartLayout} from './ProductItem';

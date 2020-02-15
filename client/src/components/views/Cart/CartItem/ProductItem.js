@@ -1,12 +1,12 @@
 import React, {useContext} from 'react';
-import {ProductItemLayout, CartContext} from '../../../';
+import {ProductItemCartLayout, CartContext} from '../../../';
 
 function ProductItem({name}) {
     
     const {cartDispatch} = useContext(CartContext);
 
     return (
-        <ProductItemLayout name={name} dispatch={cartDispatch} />
+        <ProductItemCartLayout name={name} dispatch={cartDispatch} />
     )
 }
 
