@@ -17,5 +17,8 @@
     "url": "https://github.com/mylottiv/pizza_ordering_app/issues"
   },
   "homepage": "https://github.com/mylottiv/pizza_ordering_app#readme",
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "@tailwindcss/custom-forms": "^0.2.1"
+  }
 }
