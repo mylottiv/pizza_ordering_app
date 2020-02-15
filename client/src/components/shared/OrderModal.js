@@ -161,22 +161,7 @@ function OrderModal({open}) {
             {open && (
             <div className='container ml-8 p-5 my-8 z-10 top-0 left-0 h-11/12 fixed'>
                 <div className='flex-1 flex-row p-5 rounded bg-blue-100 h-full overflow-y-scroll'>
-                   <ProductItemModalLayout>
-                        {/* <p>
-                            Pellentesque scelerisque felis risus, sed maximus sem pellentesque ut. Suspendisse lectus velit, laoreet sit amet velit aliquam, vehicula tempus nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer vulputate euismod mauris nec aliquam. In mollis erat vel nisi faucibus finibus. Nam sem nibh, bibendum vitae porta a, pulvinar ut diam. Curabitur tortor massa, elementum fermentum rutrum eu, fringilla ac augue. Quisque scelerisque metus justo, eget feugiat justo porta at. Donec sit amet rhoncus mauris. Morbi laoreet ac lectus id pulvinar. Mauris diam massa, aliquet scelerisque urna et, viverra aliquet dui. Donec vel dignissim leo. Aliquam vitae neque velit. In malesuada justo ullamcorper elementum congue. In non arcu ante.
-                        </p>
-                        <p>
-                            Pellentesque scelerisque felis risus, sed maximus sem pellentesque ut. Suspendisse lectus velit, laoreet sit amet velit aliquam, vehicula tempus nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer vulputate euismod mauris nec aliquam. In mollis erat vel nisi faucibus finibus. Nam sem nibh, bibendum vitae porta a, pulvinar ut diam. Curabitur tortor massa, elementum fermentum rutrum eu, fringilla ac augue. Quisque scelerisque metus justo, eget feugiat justo porta at. Donec sit amet rhoncus mauris. Morbi laoreet ac lectus id pulvinar. Mauris diam massa, aliquet scelerisque urna et, viverra aliquet dui. Donec vel dignissim leo. Aliquam vitae neque velit. In malesuada justo ullamcorper elementum congue. In non arcu ante.
-                        </p>
-                        <p>
-                            Pellentesque scelerisque felis risus, sed maximus sem pellentesque ut. Suspendisse lectus velit, laoreet sit amet velit aliquam, vehicula tempus nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer vulputate euismod mauris nec aliquam. In mollis erat vel nisi faucibus finibus. Nam sem nibh, bibendum vitae porta a, pulvinar ut diam. Curabitur tortor massa, elementum fermentum rutrum eu, fringilla ac augue. Quisque scelerisque metus justo, eget feugiat justo porta at. Donec sit amet rhoncus mauris. Morbi laoreet ac lectus id pulvinar. Mauris diam massa, aliquet scelerisque urna et, viverra aliquet dui. Donec vel dignissim leo. Aliquam vitae neque velit. In malesuada justo ullamcorper elementum congue. In non arcu ante.
-                        </p>
-                        <p>
-                            Pellentesque scelerisque felis risus, sed maximus sem pellentesque ut. Suspendisse lectus velit, laoreet sit amet velit aliquam, vehicula tempus nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer vulputate euismod mauris nec aliquam. In mollis erat vel nisi faucibus finibus. Nam sem nibh, bibendum vitae porta a, pulvinar ut diam. Curabitur tortor massa, elementum fermentum rutrum eu, fringilla ac augue. Quisque scelerisque metus justo, eget feugiat justo porta at. Donec sit amet rhoncus mauris. Morbi laoreet ac lectus id pulvinar. Mauris diam massa, aliquet scelerisque urna et, viverra aliquet dui. Donec vel dignissim leo. Aliquam vitae neque velit. In malesuada justo ullamcorper elementum congue. In non arcu ante.
-                        </p>
-                        <p>
-                            Pellentesque scelerisque felis risus, sed maximus sem pellentesque ut. Suspendisse lectus velit, laoreet sit amet velit aliquam, vehicula tempus nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer vulputate euismod mauris nec aliquam. In mollis erat vel nisi faucibus finibus. Nam sem nibh, bibendum vitae porta a, pulvinar ut diam. Curabitur tortor massa, elementum fermentum rutrum eu, fringilla ac augue. Quisque scelerisque metus justo, eget feugiat justo porta at.                
-                        </p> */}
+                    <ProductItemModalLayout>
                     </ProductItemModalLayout>
                 </div>
             </div>)}

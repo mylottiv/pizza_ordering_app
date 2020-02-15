@@ -12,7 +12,7 @@ function App() {
         backgroundAttachment: 'fixed'
       }
     }>
-      <OrderModal open={true}/>
+      <OrderModal open={false}/>
       <div className='container mx-8 px-5'>
         <div className='flex flex-row'>
           <SideBar />

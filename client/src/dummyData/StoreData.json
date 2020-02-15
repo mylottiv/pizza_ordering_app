@@ -1,42 +1,415 @@
 {
     "pizza": [
         {
-            "name": "BYOP",
-            "products": ["BYOP"]
+            "category": "BYOP",
+            "products": [
+                {
+                    "name": "BYOP",
+                    "choices": [
+                        {
+                            "field": "Crust",
+                            "options": [
+                                {
+                                    "name": "Hand-Tossed",
+                                    "default": false
+                                }, 
+                                {
+                                    "name": "Thin",
+                                    "default": false
+                                },
+                                {
+                                    "name": "Pan",
+                                    "default": false
+                                }
+                            ]
+                        },
+                        {
+                            "field": "Size",
+                            "options": [
+                                {
+                                    "name": "Small",
+                                    "default": false
+                                },
+                                {
+                                    "name": "Medium", 
+                                    "default": false
+                                }, 
+                                {
+                                    "name": "Large", 
+                                    "default": false
+                                }
+                            ]
+                        },
+                        {
+                            "field": "Sauce",
+                            "options": [
+                                {
+                                    "name": "Marinara",
+                                    "default": false
+                                },
+                                {
+                                    "name": "Alfredo", 
+                                    "default": false
+                                }, 
+                                {
+                                    "name": "BBQ", 
+                                    "default": false
+                                }
+                            ]
+                        }
+                    ],
+                    "toppings": {
+                        "Cheese": [
+                            {
+                                "name": "Mozzarella",
+                                "default": false
+                            },
+                            {
+                                "name": "Cheddar", 
+                                "default": false
+                            }, 
+                            {
+                                "name": "Feta", 
+                                "default": false
+                            }
+                        ],
+                        "Meats": [
+                            {
+                                "name": "Pepperoni",
+                                "default": false
+                            },
+                            {
+                                "name": "Ham", 
+                                "default": false
+                            }, 
+                            {
+                                "name": "Beef", 
+                                "default": false
+                            }
+                        ],
+                        "Veggies": [
+                            {
+                                "name": "Olives",
+                                "default": false
+                            },
+                            {
+                                "name": "Onions", 
+                                "default": false
+                            }, 
+                            {
+                                "name": "Pineapple", 
+                                "default": false
+                            }
+                        ]
+                    }
+                }
+            ]
         },
         {
-            "name": "Specialty",
-            "products": ["Hawaiian", "BBQ Chick"]
+            "category": "Specialty",
+            "products": [
+                {
+                    "name": "Hawaiian",
+                    "choices": [
+                        {
+                            "field": "Crust",
+                            "options": [
+                                {
+                                    "name": "Hand-Tossed",
+                                    "default": true
+                                }, 
+                                {
+                                    "name": "Thin",
+                                    "default": false
+                                },
+                                {
+                                    "name": "Pan",
+                                    "default": false
+                                }
+                            ]
+                        },
+                        {
+                            "field": "Size",
+                            "options": [
+                                {
+                                    "name": "Small",
+                                    "default": false
+                                },
+                                {
+                                    "name": "Medium", 
+                                    "default": false
+                                }, 
+                                {
+                                    "name": "Large", 
+                                    "default": true
+                                }
+                            ]
+                        },
+                        {
+                            "field": "Sauce",
+                            "options": [
+                                {
+                                    "name": "Marinara",
+                                    "default": true
+                                },
+                                {
+                                    "name": "Alfredo", 
+                                    "default": false
+                                }, 
+                                {
+                                    "name": "BBQ", 
+                                    "default": false
+                                }
+                            ]
+                        }
+                    ],
+                    "toppings": {
+                        "Cheese": [
+                            {
+                                "name": "Mozzarella",
+                                "default": true
+                            },
+                            {
+                                "name": "Cheddar", 
+                                "default": false
+                            }, 
+                            {
+                                "name": "Feta", 
+                                "default": false
+                            }
+                        ],
+                        "Meats": [
+                            {
+                                "name": "Pepperoni",
+                                "default": false
+                            },
+                            {
+                                "name": "Ham", 
+                                "default": true
+                            }, 
+                            {
+                                "name": "Beef", 
+                                "default": false
+                            }
+                        ],
+                        "Veggies": [
+                            {
+                                "name": "Olives",
+                                "default": false
+                            },
+                            {
+                                "name": "Onions", 
+                                "default": false
+                            }, 
+                            {
+                                "name": "Pineapple", 
+                                "default": true
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "The Works",
+                    "choices": [
+                        {
+                            "field": "Crust",
+                            "options": [
+                                {
+                                    "name": "Hand-Tossed",
+                                    "default": true
+                                }, 
+                                {
+                                    "name": "Thin",
+                                    "default": false
+                                },
+                                {
+                                    "name": "Pan",
+                                    "default": false
+                                }
+                            ]
+                        },
+                        {
+                            "field": "Size",
+                            "options": [
+                                {
+                                    "name": "Small",
+                                    "default": false
+                                },
+                                {
+                                    "name": "Medium", 
+                                    "default": false
+                                }, 
+                                {
+                                    "name": "Large", 
+                                    "default": true
+                                }
+                            ]
+                        },
+                        {
+                            "field": "Sauce",
+                            "options": [
+                                {
+                                    "name": "Marinara",
+                                    "default": true
+                                },
+                                {
+                                    "name": "Alfredo", 
+                                    "default": false
+                                }, 
+                                {
+                                    "name": "BBQ", 
+                                    "default": false
+                                }
+                            ]
+                        }
+                    ],
+                    "toppings": {
+                        "Cheese": [
+                            {
+                                "name": "Mozzarella",
+                                "default": true
+                            },
+                            {
+                                "name": "Cheddar", 
+                                "default": false
+                            }, 
+                            {
+                                "name": "Feta", 
+                                "default": false
+                            }
+                        ],
+                        "Meats": [
+                            {
+                                "name": "Pepperoni",
+                                "default": true
+                            },
+                            {
+                                "name": "Ham", 
+                                "default": true
+                            }, 
+                            {
+                                "name": "Beef", 
+                                "default": true
+                            }
+                        ],
+                        "Veggies": [
+                            {
+                                "name": "Olives",
+                                "default": true
+                            },
+                            {
+                                "name": "Onions", 
+                                "default": true
+                            }, 
+                            {
+                                "name": "Pineapple", 
+                                "default": false
+                            }
+                        ]
+                    }
+                }
+            ]
         }
     ],
     "sides": [
         {
-            "name": "Appetizers",
-            "products": ["Cheese Sticks", "Mozzarella Sticks"]
+            "category": "Appetizers",
+            "products": [
+                {
+                    "name": "Cheese Sticks",
+                    "choices": [
+                        {
+                            "field": "Size",
+                            "options": [
+                                {
+                                    "name": "Small",
+                                    "default": false
+                                },
+                                {
+                                    "name": "Medium",
+                                    "default": true
+                                },
+                                {
+                                    "name": "Large",
+                                    "default": false
+                                }
+                            ]
+                        },
+                        {
+                            "field": "Dipping Sauce",
+                            "options": [
+                                {
+                                    "name": "Marinara",
+                                    "default": true
+                                },
+                                {
+                                    "name": "Ranch",
+                                    "default": false
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Mozzarella Sticks",
+                    "choices": [
+                       {
+                            "field": "Size",
+                            "options": [
+                                {
+                                    "name": "Small",
+                                    "default": false
+                                },
+                                {
+                                    "name": "Medium",
+                                    "default": true
+                                },
+                                {
+                                    "name": "Large",
+                                    "default": false
+                                }
+                            ]
+                        },
+                        {
+                            "field": "Dipping Sauce",
+                            "options": [
+                                {
+                                    "name": "Marinara",
+                                    "default": true
+                                },
+                                {
+                                    "name": "Ranch",
+                                    "default": false
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
         },
         {
-            "name": "Sauce",
-            "products": ["Marinara", "Ranch"]
+            "category": "Sauce",
+            "products": [{"name": "Marinara"}, {"name": "Ranch"}]
         }
     ],
     "salads": [
         {
-            "name": "Vegetarian",
-            "products": ["Caesar", "Greek"]
+            "category": "Vegetarian",
+            "products": [{"name": "Caesar"}, {"name": "Greek"}]
         },
         {
-            "name": "Vegan",
-            "products": ["Garden", "Tabouli"]
+            "category": "Vegan",
+            "products": [{"name": "Garden"}, {"name": "Tabouli"}]
         }
     ],
     "desserts": [
         {
-            "name": "Premade",
-            "products": ["Cookies", "Brownies"]
+            "category": "Premade",
+            "products": [{"name": "Cookies"}, {"name": "Brownies"}]
         },
         {
-            "name": "Dessert Pizza",
-            "products": ["CinnaStix", "S'mores"]
+            "category": "Dessert Pizza",
+            "products": [{"name": "CinnaStix"}, {"name": "S'mores"}]
         }
     ]
 }

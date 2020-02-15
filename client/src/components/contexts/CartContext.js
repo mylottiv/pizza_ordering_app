@@ -1,6 +1,6 @@
 import React, {createContext, useReducer} from 'react';
 import dummyCart from '../../dummyData/CartData.json';
-import storeData from '../../dummyData/StoreData';
+import storeData from '../../dummyData/StoreData.json';
 
 export const CartContext = createContext();
 
@@ -55,6 +55,9 @@ export const CartProvider = (props) => {
             return {...cart}
         }
     }
+
+    console.log('store', storeData);
+    console.log('cart', dummyCart);
 
     const [cartState, cartDispatch] = useReducer(reducer(cartReference), dummyCart)
 
