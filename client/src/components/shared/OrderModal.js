@@ -20,51 +20,51 @@ function ProductHeader(props) {
     )
 }
 
-function ProductOptions(props) {
+function ProductOptions({type}) {
     return (
-        <div className='flex flex-row'>
+        <div className='flex flex-row my-6'>
             <div className='flex-1 flex-col text-center'>
                 <span className="text-gray-700">Account Type</span>
                 <div className="flex flex-row mr-4 justify-center">
                     <div className='flex flex-col ml-4'>
                         <label className="inline-flex items-center">
-                            <input type="radio" className="form-radio" name="accountType" value="personal" />
+                            <input type="radio" className="form-radio" name={type} value="1" />
                             <span className="ml-2">Personal</span>
                         </label>
                     </div>
                     <div className='flex flex-col ml-4'>
                         <label className="inline-flex items-center">
-                            <input type="radio" className="form-radio" name="accountType" value="personal" />
+                            <input type="radio" className="form-radio" name={type} value="2" />
                             <span className="ml-2">Personal</span>
                         </label>
                     </div>
                     <div className='flex flex-col ml-4'>
                         <label className="inline-flex items-center">
-                            <input type="radio" className="form-radio" name="accountType" value="personal" />
+                            <input type="radio" className="form-radio" name={type} value="3" />
                             <span className="ml-2">Personal</span>
                         </label>
                     </div>
                     <div className='flex flex-col ml-4'>
                         <label className="inline-flex items-center">
-                            <input type="radio" className="form-radio" name="accountType" value="personal" />
+                            <input type="radio" className="form-radio" name={type} value="4" />
                             <span className="ml-2">Personal</span>
                         </label>
                     </div>
                     <div className='flex flex-col ml-4'>
                         <label className="inline-flex items-center">
-                            <input type="radio" className="form-radio" name="accountType" value="personal" />
+                            <input type="radio" className="form-radio" name={type} value="5" />
                             <span className="ml-2">Personal</span>
                         </label>
                     </div>
                     <div className='flex flex-col ml-4'>
                         <label className="inline-flex items-center">
-                            <input type="radio" className="form-radio" name="accountType" value="personal" />
+                            <input type="radio" className="form-radio" name={type} value="6" />
                             <span className="ml-2">Personal</span>
                         </label>
                     </div>
                     <div className='flex flex-col ml-4'>
                         <label className="inline-flex items-center">
-                            <input type="radio" className="form-radio" name="accountType" value="personal" />
+                            <input type="radio" className="form-radio" name={type} value="7" />
                             <span className="ml-2">Personal</span>
                         </label>
                     </div>
@@ -80,7 +80,11 @@ function ProfileLayout(props) {
             <ProductProfileImage />
             <div className='flex-1 flex-col'>
                 <ProductHeader />
-                <ProductOptions />
+                <ProductOptions type={'a'}/>
+                <ProductOptions type={'b'}/>
+                <ProductOptions type={'c'}/>
+                <ProductOptions type={'d'}/>
+                <ProductOptions type={'e'}/>
             </div>
         </div>
     )
