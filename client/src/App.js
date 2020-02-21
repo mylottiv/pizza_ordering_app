@@ -13,7 +13,7 @@ function App() {
       }}
     >
       <CartProvider>
-        <OrderModal open={true} />
+        <OrderModal />
         <div className="container mx-8 px-5">
           <div className="flex flex-row">
             <SideBar />

@@ -1,17 +1,18 @@
-import React from 'react';
-import {CategoryLayout} from '../..'
-import ProductCard from './ProductCard';
+import React from "react";
+import {CategoryLayout} from "../..";
+import ProductCard from "./ProductCard";
 
-function ProductList({content}) {
+function ProductList({itemRef, content}) {
+  // Populates with Product Cards
+  const renderContent = content.products.map((product, index) => (
+    <ProductCard
+      key={product.name}
+      name={product.name}
+      itemRef={{...itemRef, productIndex: index}}
+    />
+  ));
 
-    // Populates with Product Cards
-    const renderContent = content.products.map((product) => (<ProductCard name={product.name} />))
-    
-    return (
-        <CategoryLayout name={content.category}>
-            {renderContent}
-        </CategoryLayout>
-    )
+  return <CategoryLayout name={content.category}>{renderContent}</CategoryLayout>;
 }
 
 export default ProductList;

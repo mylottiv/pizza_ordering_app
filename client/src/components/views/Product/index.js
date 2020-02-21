@@ -1,22 +1,35 @@
-import React from 'react';
-import {ContentLayout, MainLayout} from '../..';
-import ProductList from './ProductList';
+import React from "react";
+import {ContentLayout, MainLayout} from "../..";
+import ProductList from "./ProductList";
 
 function Product({match, content}) {
+  const productType = match.params.type;
+  const name = productType.substring(0, 1).toUpperCase() + productType.substring(1);
 
-    const categories = content.map(category => {
-        return (<ProductList content={category} />)
-      })
-    
-      console.log('TYPE IS', match.params.type);
-    
-      return (
-        <MainLayout>
-          <ContentLayout name={match.params.type.substring(0,1).toUpperCase() + match.params.type.substring(1)}>
-            {categories}
-          </ContentLayout>
-        </MainLayout>
-    )
+  // Add reference information as needed to itemRef down the render tree
+  const itemRef = {
+    type: productType,
+    categoryIndex: -1,
+    productIndex: -1,
+  };
+
+  const categories = content.map((category, index) => {
+    return (
+      <ProductList
+        key={category.category}
+        itemRef={{...itemRef, categoryIndex: index}}
+        content={category}
+      />
+    );
+  });
+
+  console.log("TYPE IS", match.params.type);
+
+  return (
+    <MainLayout>
+      <ContentLayout name={name}>{categories}</ContentLayout>
+    </MainLayout>
+  );
 }
 
-export default Product
+export default Product;

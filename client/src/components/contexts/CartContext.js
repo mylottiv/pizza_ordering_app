@@ -66,7 +66,7 @@ export const CartProvider = props => {
       return {
         ...modalState,
         open: false,
-        itemRef: {type: "", category: "", subCategoryIndex: -1, productIndex: -1},
+        itemRef: {type: "", categoryIndex: -1, productIndex: -1},
       };
     },
   };
@@ -77,7 +77,7 @@ export const CartProvider = props => {
   const [cartState, cartDispatch] = useReducer(reducer(cartReference), dummyCart);
   const [modalState, modalDispatch] = useReducer(reducer(modalReference), {
     open: false,
-    itemRef: {type: "", category: "", subCategoryIndex: -1, productIndex: -1},
+    itemRef: {type: "", categoryIndex: -1, productIndex: -1},
   });
 
   return (
