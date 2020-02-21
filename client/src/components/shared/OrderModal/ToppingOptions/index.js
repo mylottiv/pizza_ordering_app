@@ -7,7 +7,6 @@ function ToppingOptions({type, options, register}) {
       key={option.name}
       topping={option.name}
       selected={option.selected}
-      register={register}
     />
   ));
 

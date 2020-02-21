@@ -12,7 +12,6 @@ function ProfileLayout({name, choices, register}) {
           key={field.field}
           type={field.field}
           options={field.options}
-          register={register}
         />
       ))
     : false;

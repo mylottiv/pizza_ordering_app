@@ -1,7 +1,10 @@
 import React from "react";
+import {useFormContext} from "react-hook-form";
 
-function ToppingOptionButton({topping, selected, register}) {
+function ToppingOptionButton({topping, selected}) {
+  const {register} = useFormContext();
   console.log("selected,", selected);
+
   return (
     <div className="flex flex-row">
       <div className="flex-1 flex-col">

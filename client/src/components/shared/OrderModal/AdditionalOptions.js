@@ -3,24 +3,9 @@ import ToppingOptions from "./ToppingOptions";
 
 function AdditionalOptions({toppings, register}) {
   const toppingArray = [
-    <ToppingOptions
-      key={"Cheese"}
-      type={"Cheese"}
-      options={toppings.cheese}
-      register={register}
-    />,
-    <ToppingOptions
-      key={"Meats"}
-      type={"Meats"}
-      options={toppings.meats}
-      register={register}
-    />,
-    <ToppingOptions
-      key={"Veggies"}
-      type={"Veggies"}
-      options={toppings.veggies}
-      register={register}
-    />,
+    <ToppingOptions key={"Cheese"} type={"Cheese"} options={toppings.cheese} />,
+    <ToppingOptions key={"Meats"} type={"Meats"} options={toppings.meats} />,
+    <ToppingOptions key={"Veggies"} type={"Veggies"} options={toppings.veggies} />,
   ];
 
   return (

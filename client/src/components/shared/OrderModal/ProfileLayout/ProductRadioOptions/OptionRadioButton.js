@@ -1,6 +1,9 @@
 import React from "react";
+import {useFormContext} from "react-hook-form";
 
-function OptionRadioButton({type, value, selected, register}) {
+function OptionRadioButton({type, value, selected}) {
+  const {register} = useFormContext();
+
   return (
     <div className="flex flex-col ml-4">
       <label className="inline-flex items-center">

@@ -1,6 +1,16 @@
 import React from "react";
+import {useFormContext} from "react-hook-form";
 
-function OrderButtons({register}) {
+function OrderButtons(props) {
+  console.log("rendered");
+  const {register, getValues, setValue} = useFormContext();
+
+  const updateQuantity = operator => {
+    const operand = operator === "add" ? 1 : -1;
+    const newQuantity = parseInt(getValues()["Quantity"]) + operand;
+    setValue("Quantity", newQuantity.toString());
+  };
+
   return (
     <div className="flex flex-row">
       <div className="flex-1 flex-col px-20">
@@ -12,14 +22,20 @@ function OrderButtons({register}) {
             <input
               type="number"
               className="form-input w-1/2"
-              name="quantity"
-              value="1"
+              name="Quantity"
+              defaultValue={1}
               ref={register({required: true})}
             />
-            <button className="bg-blue-500 rounded-full h-16 w-16 flex items-center justify-center ml-6">
+            <button
+              className="bg-blue-500 rounded-full h-16 w-16 flex items-center justify-center ml-6"
+              onClick={() => updateQuantity("add")}
+            >
               +
             </button>
-            <button className="bg-blue-500 rounded-full h-16 w-16 flex items-center justify-center ml-6">
+            <button
+              className="bg-blue-500 rounded-full h-16 w-16 flex items-center justify-center ml-6"
+              onClick={() => updateQuantity("subtract")}
+            >
               -
             </button>
           </div>

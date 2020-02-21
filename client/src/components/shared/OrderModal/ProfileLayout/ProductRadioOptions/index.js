@@ -8,7 +8,6 @@ function ProductRadioOptions({type, options, register}) {
       key={option.name}
       value={option.name}
       selected={option.selected}
-      register={register}
     />
   ));
 
