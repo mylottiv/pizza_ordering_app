@@ -1,13 +1,14 @@
 import React from "react";
 import OptionRadioButton from "./OptionRadioButton";
 
-function ProductRadioOptions({type, options}) {
+function ProductRadioOptions({type, options, register}) {
   const radioOptions = options.map(option => (
     <OptionRadioButton
       type={type}
       key={option.name}
       value={option.name}
       selected={option.selected}
+      register={register}
     />
   ));
 

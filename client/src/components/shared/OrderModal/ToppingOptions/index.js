@@ -1,12 +1,13 @@
 import React from "react";
 import ToppingOptionButton from "./ToppingOptionButton";
 
-function ToppingOptions({type, options}) {
+function ToppingOptions({type, options, register}) {
   const checkboxOptions = options.map(option => (
     <ToppingOptionButton
       key={option.name}
       topping={option.name}
       selected={option.selected}
+      register={register}
     />
   ));
 

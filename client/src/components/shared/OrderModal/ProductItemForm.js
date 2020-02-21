@@ -6,13 +6,17 @@ import OrderButtons from "./OrderButtons";
 
 function ProductItemForm({product}) {
   const {register, handleSubmit} = useForm();
-  const onSubmit = data => console.log(data);
+  const onSubmit = data => console.log("submit data", data);
+  console.log("ref check", register);
 
   return (
     <form className="flex flex-col shadow-lg p-5" onSubmit={handleSubmit(onSubmit)}>
-      <ProfileLayout name={product.name} choices={product.choices} ref={register} />
-      <AdditionalOptions toppings={product.toppings} ref={register} />
-      <OrderButtons ref={register} />
+      <ProfileLayout name={product.name} choices={product.choices} register={register} />
+      <AdditionalOptions
+        toppings={product.toppings ? product.toppings : false}
+        register={register}
+      />
+      <OrderButtons register={register} />
     </form>
   );
 }

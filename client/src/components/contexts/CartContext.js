@@ -40,9 +40,9 @@ export const CartProvider = props => {
     },
 
     // Remove Item from cart
-    remove_item_from_cart: (itemId, cart) => {
+    remove_item_from_cart: ({itemName}, cart) => {
       // Return cart with remove item filtered out
-      return {...cart, products: cart.items.filter(item2 => item2.name !== itemId)};
+      return {...cart, products: cart.items.filter(item2 => item2.name !== itemName)};
     },
 
     // Update Item in cart

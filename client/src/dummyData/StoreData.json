@@ -316,7 +316,7 @@
       "category": "Appetizers",
       "products": [
         {
-          "name": "cheese Sticks",
+          "name": "Cheese Sticks",
           "choices": [
             {
               "field": "Size",
@@ -395,11 +395,185 @@
   "salads": [
     {
       "category": "Vegetarian",
-      "products": [{"name": "Caesar"}, {"name": "Greek"}]
+      "products": [
+        {
+          "name": "Caesar",
+          "choices": [
+            {
+              "field": "Size",
+              "options": [
+                {
+                  "name": "Small",
+                  "selected": false
+                },
+                {
+                  "name": "Medium",
+                  "selected": true
+                },
+                {
+                  "name": "Large",
+                  "selected": false
+                }
+              ]
+            },
+            {
+              "field": "Dressing",
+              "options": [
+                {
+                  "name": "Ranch",
+                  "selected": false
+                },
+                {
+                  "name": "Greek",
+                  "selected": false
+                },
+                {
+                  "name": "Balsamic",
+                  "selected": false
+                },
+                {
+                  "name": "Caesar",
+                  "selected": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Greek",
+          "choices": [
+            {
+              "field": "Size",
+              "options": [
+                {
+                  "name": "Small",
+                  "selected": false
+                },
+                {
+                  "name": "Medium",
+                  "selected": true
+                },
+                {
+                  "name": "Large",
+                  "selected": false
+                }
+              ]
+            },
+            {
+              "field": "Dressing",
+              "options": [
+                {
+                  "name": "Ranch",
+                  "selected": false
+                },
+                {
+                  "name": "Greek",
+                  "selected": true
+                },
+                {
+                  "name": "Balsamic",
+                  "selected": false
+                },
+                {
+                  "name": "Caesar",
+                  "selected": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "category": "Vegan",
-      "products": [{"name": "Garden"}, {"name": "Tabouli"}]
+      "products": [
+        {
+          "name": "Garden",
+          "choices": [
+            {
+              "field": "Size",
+              "options": [
+                {
+                  "name": "Small",
+                  "selected": false
+                },
+                {
+                  "name": "Medium",
+                  "selected": true
+                },
+                {
+                  "name": "Large",
+                  "selected": false
+                }
+              ]
+            },
+            {
+              "field": "Dressing",
+              "options": [
+                {
+                  "name": "Ranch",
+                  "selected": false
+                },
+                {
+                  "name": "Greek",
+                  "selected": false
+                },
+                {
+                  "name": "Balsamic",
+                  "selected": true
+                },
+                {
+                  "name": "Caesar",
+                  "selected": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Tabouli",
+          "choices": [
+            {
+              "field": "Size",
+              "options": [
+                {
+                  "name": "Small",
+                  "selected": false
+                },
+                {
+                  "name": "Medium",
+                  "selected": true
+                },
+                {
+                  "name": "Large",
+                  "selected": false
+                }
+              ]
+            },
+            {
+              "field": "Dressing",
+              "options": [
+                {
+                  "name": "Ranch",
+                  "selected": false
+                },
+                {
+                  "name": "Greek",
+                  "selected": false
+                },
+                {
+                  "name": "Balsamic",
+                  "selected": true
+                },
+                {
+                  "name": "Caesar",
+                  "selected": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "desserts": [
@@ -409,7 +583,78 @@
     },
     {
       "category": "Dessert Pizza",
-      "products": [{"name": "CinnaStix"}, {"name": "S'mores"}]
+      "products": [
+        {
+          "name": "CinnaStix",
+          "choices": [
+            {
+              "field": "Size",
+              "options": [
+                {
+                  "name": "Small",
+                  "selected": false
+                },
+                {
+                  "name": "Medium",
+                  "selected": true
+                },
+                {
+                  "name": "Large",
+                  "selected": false
+                }
+              ]
+            },
+            {
+              "field": "Dipping Sauce",
+              "options": [
+                {
+                  "name": "Icing",
+                  "selected": true
+                },
+                {
+                  "name": "Dulce de Leche",
+                  "selected": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "S'Mores",
+          "choices": [
+            {
+              "field": "Size",
+              "options": [
+                {
+                  "name": "Small",
+                  "selected": false
+                },
+                {
+                  "name": "Medium",
+                  "selected": true
+                },
+                {
+                  "name": "Large",
+                  "selected": false
+                }
+              ]
+            },
+            {
+              "field": "Dipping Sauce",
+              "options": [
+                {
+                  "name": "Icing",
+                  "selected": false
+                },
+                {
+                  "name": "Dulce de Leche",
+                  "selected": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }

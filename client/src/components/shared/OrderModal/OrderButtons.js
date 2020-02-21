@@ -1,6 +1,6 @@
 import React from "react";
 
-function OrderButtons({ref}) {
+function OrderButtons({register}) {
   return (
     <div className="flex flex-row">
       <div className="flex-1 flex-col px-20">
@@ -10,11 +10,11 @@ function OrderButtons({ref}) {
         <div className="flex flex-row">
           <div className="flex-1 inline-flex items-center justify-center my-2">
             <input
-              type="email"
+              type="number"
               className="form-input w-1/2"
               name="quantity"
               value="1"
-              ref={ref}
+              ref={register({required: true})}
             />
             <button className="bg-blue-500 rounded-full h-16 w-16 flex items-center justify-center ml-6">
               +
@@ -25,7 +25,10 @@ function OrderButtons({ref}) {
           </div>
         </div>
         <div className="flex flex-row justify-center">
-          <button className="flex-1 bg-red-700 block rounded-full py-2 px-4">
+          <button
+            type="submit"
+            className="flex-1 bg-red-700 block rounded-full py-2 px-4"
+          >
             Add to Order
           </button>
         </div>
