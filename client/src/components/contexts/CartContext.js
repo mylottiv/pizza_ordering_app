@@ -13,46 +13,30 @@ export const CartProvider = props => {
 
   // Reducer object reference for manipulating Cart
   const cartReference = {
-    add_item_to_cart: ({itemName, type}, cart) => {
+    add_item_to_cart: (newItem, cart) => {
       console.log(cart);
 
-      const itemIndex = cart.items.findIndex(item2 => itemName === item2.name);
-
-      // If new item, add new entry for item to cart
-      if (itemIndex === -1) {
-        const newItem =
-          type === "product"
-            ? {productproductName: itemName, quantity: 0}
-            : {
-                couponName: itemName,
-                couponItems: [
-                  {productName: itemName, quantity: 0},
-                  {productName: itemName, quantity: 0},
-                ],
-              };
-        return {...cart, items: [...cart.items, newItem]};
-      }
-
-      // Otherwise, increase quantity of relevant item entry
-      console.log("item already in cart", itemIndex);
-      cart.items[itemIndex].quantity += 1;
-      return {...cart};
+      return {...cart, items: [...cart.items, newItem]};
     },
 
     // Remove Item from cart
-    remove_item_from_cart: ({itemName}, cart) => {
+    remove_item_from_cart: (targetIndex, cart) => {
       // Return cart with remove item filtered out
-      return {...cart, products: cart.items.filter(item2 => item2.name !== itemName)};
+      return {...cart, items: cart.items.filter((item2, index) => index !== targetIndex)};
     },
+
+    // Remove Item from Coupon
+    // remove_item_from_coupon: ({couponIndex, itemIndex}, cart) => {
+    // }
 
     // Update Item in cart
     // SKEPTICAL ABOUT THIS ONE CHIEF
-    update_item_in_cart: (updatedItem, cart) => {
-      // Return cart with new version of item entry
-      const itemIndex = cart.items.findIndex(item => updatedItem.name === item.name);
-      cart.items[itemIndex] = updatedItem;
-      return {...cart};
-    },
+    // update_item_in_cart: (updatedItem, cart) => {
+    //   // Return cart with new version of item entry
+    //   const itemIndex = cart.items.findIndex(item => updatedItem.name === item.name);
+    //   cart.items[itemIndex] = updatedItem;
+    //   return {...cart};
+    // },
   };
 
   // Reducer reference for toggling and populating order modal

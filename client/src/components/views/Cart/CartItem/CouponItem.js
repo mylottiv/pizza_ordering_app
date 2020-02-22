@@ -1,19 +1,20 @@
-import React from 'react';
-import ProductItem from './ProductItem';
-import {CouponItemCartLayout} from '../../../'
+import React from "react";
+import ProductItem from "./ProductItem";
+import {CouponItemCartLayout} from "../../../";
 
-function CouponItem({name, items}) {
+function CouponItem({couponRef, items}) {
+  const {name} = couponRef;
 
-    const couponProducts = items.map(({productName, quantity}) => {
-        return (
-            <ProductItem name={productName} />
-        )
-    })
+  const couponProducts = items.map(({selectedItem}, index) => {
     return (
-        <CouponItemCartLayout name={name}>
-            {couponProducts}
-        </CouponItemCartLayout>
-    )
+      <ProductItem
+        key={index}
+        itemRef={{name: selectedItem.productName, cartIndex: index}}
+        fields={selectedItem.fields}
+      />
+    );
+  });
+  return <CouponItemCartLayout name={name}>{couponProducts}</CouponItemCartLayout>;
 }
 
 export default CouponItem;

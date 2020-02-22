@@ -1,660 +1,694 @@
 {
-  "pizza": [
-    {
-      "category": "BYOP",
-      "products": [
-        {
-          "name": "BYOP",
-          "choices": [
-            {
-              "field": "Crust",
-              "options": [
+  "menu": {
+    "pizza": [
+      {
+        "category": "BYOP",
+        "products": [
+          {
+            "name": "BYOP",
+            "choices": [
+              {
+                "field": "Crust",
+                "options": [
+                  {
+                    "name": "Hand-Tossed",
+                    "selected": false
+                  },
+                  {
+                    "name": "Thin",
+                    "selected": false
+                  },
+                  {
+                    "name": "Pan",
+                    "selected": false
+                  }
+                ]
+              },
+              {
+                "field": "Size",
+                "options": [
+                  {
+                    "name": "Small",
+                    "selected": false
+                  },
+                  {
+                    "name": "Medium",
+                    "selected": false
+                  },
+                  {
+                    "name": "Large",
+                    "selected": false
+                  }
+                ]
+              },
+              {
+                "field": "Sauce",
+                "options": [
+                  {
+                    "name": "Marinara",
+                    "selected": false
+                  },
+                  {
+                    "name": "Alfredo",
+                    "selected": false
+                  },
+                  {
+                    "name": "BBQ",
+                    "selected": false
+                  }
+                ]
+              }
+            ],
+            "toppings": {
+              "cheese": [
                 {
-                  "name": "Hand-Tossed",
+                  "name": "Mozzarella",
                   "selected": false
                 },
                 {
-                  "name": "Thin",
+                  "name": "Cheddar",
                   "selected": false
                 },
                 {
-                  "name": "Pan",
+                  "name": "Feta",
                   "selected": false
                 }
-              ]
-            },
-            {
-              "field": "Size",
-              "options": [
+              ],
+              "meats": [
                 {
-                  "name": "Small",
+                  "name": "Pepperoni",
                   "selected": false
                 },
                 {
-                  "name": "Medium",
+                  "name": "Ham",
                   "selected": false
                 },
                 {
-                  "name": "Large",
+                  "name": "Beef",
                   "selected": false
                 }
-              ]
-            },
-            {
-              "field": "Sauce",
-              "options": [
+              ],
+              "veggies": [
                 {
-                  "name": "Marinara",
+                  "name": "Olives",
                   "selected": false
                 },
                 {
-                  "name": "Alfredo",
+                  "name": "Onions",
                   "selected": false
                 },
                 {
-                  "name": "BBQ",
+                  "name": "Pineapple",
                   "selected": false
                 }
               ]
             }
-          ],
-          "toppings": {
-            "cheese": [
+          }
+        ]
+      },
+      {
+        "category": "Specialty",
+        "products": [
+          {
+            "name": "Hawaiian",
+            "choices": [
               {
-                "name": "Mozzarella",
-                "selected": false
+                "field": "Crust",
+                "options": [
+                  {
+                    "name": "Hand-Tossed",
+                    "selected": true
+                  },
+                  {
+                    "name": "Thin",
+                    "selected": false
+                  },
+                  {
+                    "name": "Pan",
+                    "selected": false
+                  }
+                ]
               },
               {
-                "name": "Cheddar",
-                "selected": false
+                "field": "Size",
+                "options": [
+                  {
+                    "name": "Small",
+                    "selected": false
+                  },
+                  {
+                    "name": "Medium",
+                    "selected": false
+                  },
+                  {
+                    "name": "Large",
+                    "selected": true
+                  }
+                ]
               },
               {
-                "name": "Feta",
-                "selected": false
+                "field": "Sauce",
+                "options": [
+                  {
+                    "name": "Marinara",
+                    "selected": true
+                  },
+                  {
+                    "name": "Alfredo",
+                    "selected": false
+                  },
+                  {
+                    "name": "BBQ",
+                    "selected": false
+                  }
+                ]
               }
             ],
-            "meats": [
+            "toppings": {
+              "cheese": [
+                {
+                  "name": "Mozzarella",
+                  "selected": true
+                },
+                {
+                  "name": "Cheddar",
+                  "selected": false
+                },
+                {
+                  "name": "Feta",
+                  "selected": false
+                }
+              ],
+              "meats": [
+                {
+                  "name": "Pepperoni",
+                  "selected": false
+                },
+                {
+                  "name": "Ham",
+                  "selected": true
+                },
+                {
+                  "name": "Beef",
+                  "selected": false
+                }
+              ],
+              "veggies": [
+                {
+                  "name": "Olives",
+                  "selected": false
+                },
+                {
+                  "name": "Onions",
+                  "selected": false
+                },
+                {
+                  "name": "Pineapple",
+                  "selected": true
+                }
+              ]
+            }
+          },
+          {
+            "name": "The Works",
+            "choices": [
               {
-                "name": "Pepperoni",
-                "selected": false
+                "field": "Crust",
+                "options": [
+                  {
+                    "name": "Hand-Tossed",
+                    "selected": true
+                  },
+                  {
+                    "name": "Thin",
+                    "selected": false
+                  },
+                  {
+                    "name": "Pan",
+                    "selected": false
+                  }
+                ]
               },
               {
-                "name": "Ham",
-                "selected": false
+                "field": "Size",
+                "options": [
+                  {
+                    "name": "Small",
+                    "selected": false
+                  },
+                  {
+                    "name": "Medium",
+                    "selected": false
+                  },
+                  {
+                    "name": "Large",
+                    "selected": true
+                  }
+                ]
               },
               {
-                "name": "Beef",
-                "selected": false
+                "field": "Sauce",
+                "options": [
+                  {
+                    "name": "Marinara",
+                    "selected": true
+                  },
+                  {
+                    "name": "Alfredo",
+                    "selected": false
+                  },
+                  {
+                    "name": "BBQ",
+                    "selected": false
+                  }
+                ]
               }
             ],
-            "veggies": [
+            "toppings": {
+              "cheese": [
+                {
+                  "name": "Mozzarella",
+                  "selected": true
+                },
+                {
+                  "name": "Cheddar",
+                  "selected": false
+                },
+                {
+                  "name": "Feta",
+                  "selected": false
+                }
+              ],
+              "meats": [
+                {
+                  "name": "Pepperoni",
+                  "selected": true
+                },
+                {
+                  "name": "Ham",
+                  "selected": true
+                },
+                {
+                  "name": "Beef",
+                  "selected": true
+                }
+              ],
+              "veggies": [
+                {
+                  "name": "Olives",
+                  "selected": true
+                },
+                {
+                  "name": "Onions",
+                  "selected": true
+                },
+                {
+                  "name": "Pineapple",
+                  "selected": false
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "sides": [
+      {
+        "category": "Appetizers",
+        "products": [
+          {
+            "name": "Cheese Sticks",
+            "choices": [
               {
-                "name": "Olives",
-                "selected": false
+                "field": "Size",
+                "options": [
+                  {
+                    "name": "Small",
+                    "selected": false
+                  },
+                  {
+                    "name": "Medium",
+                    "selected": true
+                  },
+                  {
+                    "name": "Large",
+                    "selected": false
+                  }
+                ]
               },
               {
-                "name": "Onions",
-                "selected": false
+                "field": "Dipping Sauce",
+                "options": [
+                  {
+                    "name": "Marinara",
+                    "selected": true
+                  },
+                  {
+                    "name": "Ranch",
+                    "selected": false
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Mozzarella Sticks",
+            "choices": [
+              {
+                "field": "Size",
+                "options": [
+                  {
+                    "name": "Small",
+                    "selected": false
+                  },
+                  {
+                    "name": "Medium",
+                    "selected": true
+                  },
+                  {
+                    "name": "Large",
+                    "selected": false
+                  }
+                ]
               },
               {
-                "name": "Pineapple",
-                "selected": false
+                "field": "Dipping Sauce",
+                "options": [
+                  {
+                    "name": "Marinara",
+                    "selected": true
+                  },
+                  {
+                    "name": "Ranch",
+                    "selected": false
+                  }
+                ]
               }
             ]
           }
-        }
-      ]
-    },
-    {
-      "category": "Specialty",
-      "products": [
-        {
-          "name": "Hawaiian",
-          "choices": [
-            {
-              "field": "Crust",
-              "options": [
-                {
-                  "name": "Hand-Tossed",
-                  "selected": true
-                },
-                {
-                  "name": "Thin",
-                  "selected": false
-                },
-                {
-                  "name": "Pan",
-                  "selected": false
-                }
-              ]
-            },
-            {
-              "field": "Size",
-              "options": [
-                {
-                  "name": "Small",
-                  "selected": false
-                },
-                {
-                  "name": "Medium",
-                  "selected": false
-                },
-                {
-                  "name": "Large",
-                  "selected": true
-                }
-              ]
-            },
-            {
-              "field": "Sauce",
-              "options": [
-                {
-                  "name": "Marinara",
-                  "selected": true
-                },
-                {
-                  "name": "Alfredo",
-                  "selected": false
-                },
-                {
-                  "name": "BBQ",
-                  "selected": false
-                }
-              ]
-            }
-          ],
-          "toppings": {
-            "cheese": [
+        ]
+      },
+      {
+        "category": "Sauce",
+        "products": [{"name": "Marinara"}, {"name": "Ranch"}]
+      }
+    ],
+    "salads": [
+      {
+        "category": "Vegetarian",
+        "products": [
+          {
+            "name": "Caesar",
+            "choices": [
               {
-                "name": "Mozzarella",
-                "selected": true
+                "field": "Size",
+                "options": [
+                  {
+                    "name": "Small",
+                    "selected": false
+                  },
+                  {
+                    "name": "Medium",
+                    "selected": true
+                  },
+                  {
+                    "name": "Large",
+                    "selected": false
+                  }
+                ]
               },
               {
-                "name": "Cheddar",
-                "selected": false
-              },
-              {
-                "name": "Feta",
-                "selected": false
+                "field": "Dressing",
+                "options": [
+                  {
+                    "name": "Ranch",
+                    "selected": false
+                  },
+                  {
+                    "name": "Greek",
+                    "selected": false
+                  },
+                  {
+                    "name": "Balsamic",
+                    "selected": false
+                  },
+                  {
+                    "name": "Caesar",
+                    "selected": true
+                  }
+                ]
               }
-            ],
-            "meats": [
+            ]
+          },
+          {
+            "name": "Greek",
+            "choices": [
               {
-                "name": "Pepperoni",
-                "selected": false
+                "field": "Size",
+                "options": [
+                  {
+                    "name": "Small",
+                    "selected": false
+                  },
+                  {
+                    "name": "Medium",
+                    "selected": true
+                  },
+                  {
+                    "name": "Large",
+                    "selected": false
+                  }
+                ]
               },
               {
-                "name": "Ham",
-                "selected": true
-              },
-              {
-                "name": "Beef",
-                "selected": false
-              }
-            ],
-            "veggies": [
-              {
-                "name": "Olives",
-                "selected": false
-              },
-              {
-                "name": "Onions",
-                "selected": false
-              },
-              {
-                "name": "Pineapple",
-                "selected": true
+                "field": "Dressing",
+                "options": [
+                  {
+                    "name": "Ranch",
+                    "selected": false
+                  },
+                  {
+                    "name": "Greek",
+                    "selected": true
+                  },
+                  {
+                    "name": "Balsamic",
+                    "selected": false
+                  },
+                  {
+                    "name": "Caesar",
+                    "selected": false
+                  }
+                ]
               }
             ]
           }
-        },
-        {
-          "name": "The Works",
-          "choices": [
-            {
-              "field": "Crust",
-              "options": [
-                {
-                  "name": "Hand-Tossed",
-                  "selected": true
-                },
-                {
-                  "name": "Thin",
-                  "selected": false
-                },
-                {
-                  "name": "Pan",
-                  "selected": false
-                }
-              ]
-            },
-            {
-              "field": "Size",
-              "options": [
-                {
-                  "name": "Small",
-                  "selected": false
-                },
-                {
-                  "name": "Medium",
-                  "selected": false
-                },
-                {
-                  "name": "Large",
-                  "selected": true
-                }
-              ]
-            },
-            {
-              "field": "Sauce",
-              "options": [
-                {
-                  "name": "Marinara",
-                  "selected": true
-                },
-                {
-                  "name": "Alfredo",
-                  "selected": false
-                },
-                {
-                  "name": "BBQ",
-                  "selected": false
-                }
-              ]
-            }
-          ],
-          "toppings": {
-            "cheese": [
+        ]
+      },
+      {
+        "category": "Vegan",
+        "products": [
+          {
+            "name": "Garden",
+            "choices": [
               {
-                "name": "Mozzarella",
-                "selected": true
+                "field": "Size",
+                "options": [
+                  {
+                    "name": "Small",
+                    "selected": false
+                  },
+                  {
+                    "name": "Medium",
+                    "selected": true
+                  },
+                  {
+                    "name": "Large",
+                    "selected": false
+                  }
+                ]
               },
               {
-                "name": "Cheddar",
-                "selected": false
-              },
-              {
-                "name": "Feta",
-                "selected": false
+                "field": "Dressing",
+                "options": [
+                  {
+                    "name": "Ranch",
+                    "selected": false
+                  },
+                  {
+                    "name": "Greek",
+                    "selected": false
+                  },
+                  {
+                    "name": "Balsamic",
+                    "selected": true
+                  },
+                  {
+                    "name": "Caesar",
+                    "selected": false
+                  }
+                ]
               }
-            ],
-            "meats": [
+            ]
+          },
+          {
+            "name": "Tabouli",
+            "choices": [
               {
-                "name": "Pepperoni",
-                "selected": true
+                "field": "Size",
+                "options": [
+                  {
+                    "name": "Small",
+                    "selected": false
+                  },
+                  {
+                    "name": "Medium",
+                    "selected": true
+                  },
+                  {
+                    "name": "Large",
+                    "selected": false
+                  }
+                ]
               },
               {
-                "name": "Ham",
-                "selected": true
-              },
-              {
-                "name": "Beef",
-                "selected": true
-              }
-            ],
-            "veggies": [
-              {
-                "name": "Olives",
-                "selected": true
-              },
-              {
-                "name": "Onions",
-                "selected": true
-              },
-              {
-                "name": "Pineapple",
-                "selected": false
+                "field": "Dressing",
+                "options": [
+                  {
+                    "name": "Ranch",
+                    "selected": false
+                  },
+                  {
+                    "name": "Greek",
+                    "selected": false
+                  },
+                  {
+                    "name": "Balsamic",
+                    "selected": true
+                  },
+                  {
+                    "name": "Caesar",
+                    "selected": false
+                  }
+                ]
               }
             ]
           }
-        }
-      ]
+        ]
+      }
+    ],
+    "desserts": [
+      {
+        "category": "Premade",
+        "products": [{"name": "Cookies"}, {"name": "Brownies"}]
+      },
+      {
+        "category": "Dessert Pizza",
+        "products": [
+          {
+            "name": "CinnaStix",
+            "choices": [
+              {
+                "field": "Size",
+                "options": [
+                  {
+                    "name": "Small",
+                    "selected": false
+                  },
+                  {
+                    "name": "Medium",
+                    "selected": true
+                  },
+                  {
+                    "name": "Large",
+                    "selected": false
+                  }
+                ]
+              },
+              {
+                "field": "Dipping Sauce",
+                "options": [
+                  {
+                    "name": "Icing",
+                    "selected": true
+                  },
+                  {
+                    "name": "Dulce de Leche",
+                    "selected": false
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "S'Mores",
+            "choices": [
+              {
+                "field": "Size",
+                "options": [
+                  {
+                    "name": "Small",
+                    "selected": false
+                  },
+                  {
+                    "name": "Medium",
+                    "selected": true
+                  },
+                  {
+                    "name": "Large",
+                    "selected": false
+                  }
+                ]
+              },
+              {
+                "field": "Dipping Sauce",
+                "options": [
+                  {
+                    "name": "Icing",
+                    "selected": false
+                  },
+                  {
+                    "name": "Dulce de Leche",
+                    "selected": false
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "coupons": {
+    "BOGO": {
+      "couponName": "BOGO Lg 2-Topping",
+      "itemSlots": {
+        "fixedSize": true,
+        "slots": [
+          {
+            "eligibleItems": [
+              {
+                "type": "pizza",
+                "category": "BYOP",
+                "product": "BYOP",
+                "rules": {
+                  "size": "Large",
+                  "toppings": 2
+                }
+              },
+              {
+                "type": "pizza",
+                "category": "BYOP",
+                "product": "BYOP",
+                "rules": {
+                  "size": "Large",
+                  "toppings": 2
+                }
+              }
+            ]
+          }
+        ]
+      }
     }
-  ],
-  "sides": [
-    {
-      "category": "Appetizers",
-      "products": [
-        {
-          "name": "Cheese Sticks",
-          "choices": [
-            {
-              "field": "Size",
-              "options": [
-                {
-                  "name": "Small",
-                  "selected": false
-                },
-                {
-                  "name": "Medium",
-                  "selected": true
-                },
-                {
-                  "name": "Large",
-                  "selected": false
-                }
-              ]
-            },
-            {
-              "field": "Dipping Sauce",
-              "options": [
-                {
-                  "name": "Marinara",
-                  "selected": true
-                },
-                {
-                  "name": "Ranch",
-                  "selected": false
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Mozzarella Sticks",
-          "choices": [
-            {
-              "field": "Size",
-              "options": [
-                {
-                  "name": "Small",
-                  "selected": false
-                },
-                {
-                  "name": "Medium",
-                  "selected": true
-                },
-                {
-                  "name": "Large",
-                  "selected": false
-                }
-              ]
-            },
-            {
-              "field": "Dipping Sauce",
-              "options": [
-                {
-                  "name": "Marinara",
-                  "selected": true
-                },
-                {
-                  "name": "Ranch",
-                  "selected": false
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "category": "Sauce",
-      "products": [{"name": "Marinara"}, {"name": "Ranch"}]
-    }
-  ],
-  "salads": [
-    {
-      "category": "Vegetarian",
-      "products": [
-        {
-          "name": "Caesar",
-          "choices": [
-            {
-              "field": "Size",
-              "options": [
-                {
-                  "name": "Small",
-                  "selected": false
-                },
-                {
-                  "name": "Medium",
-                  "selected": true
-                },
-                {
-                  "name": "Large",
-                  "selected": false
-                }
-              ]
-            },
-            {
-              "field": "Dressing",
-              "options": [
-                {
-                  "name": "Ranch",
-                  "selected": false
-                },
-                {
-                  "name": "Greek",
-                  "selected": false
-                },
-                {
-                  "name": "Balsamic",
-                  "selected": false
-                },
-                {
-                  "name": "Caesar",
-                  "selected": true
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Greek",
-          "choices": [
-            {
-              "field": "Size",
-              "options": [
-                {
-                  "name": "Small",
-                  "selected": false
-                },
-                {
-                  "name": "Medium",
-                  "selected": true
-                },
-                {
-                  "name": "Large",
-                  "selected": false
-                }
-              ]
-            },
-            {
-              "field": "Dressing",
-              "options": [
-                {
-                  "name": "Ranch",
-                  "selected": false
-                },
-                {
-                  "name": "Greek",
-                  "selected": true
-                },
-                {
-                  "name": "Balsamic",
-                  "selected": false
-                },
-                {
-                  "name": "Caesar",
-                  "selected": false
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "category": "Vegan",
-      "products": [
-        {
-          "name": "Garden",
-          "choices": [
-            {
-              "field": "Size",
-              "options": [
-                {
-                  "name": "Small",
-                  "selected": false
-                },
-                {
-                  "name": "Medium",
-                  "selected": true
-                },
-                {
-                  "name": "Large",
-                  "selected": false
-                }
-              ]
-            },
-            {
-              "field": "Dressing",
-              "options": [
-                {
-                  "name": "Ranch",
-                  "selected": false
-                },
-                {
-                  "name": "Greek",
-                  "selected": false
-                },
-                {
-                  "name": "Balsamic",
-                  "selected": true
-                },
-                {
-                  "name": "Caesar",
-                  "selected": false
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Tabouli",
-          "choices": [
-            {
-              "field": "Size",
-              "options": [
-                {
-                  "name": "Small",
-                  "selected": false
-                },
-                {
-                  "name": "Medium",
-                  "selected": true
-                },
-                {
-                  "name": "Large",
-                  "selected": false
-                }
-              ]
-            },
-            {
-              "field": "Dressing",
-              "options": [
-                {
-                  "name": "Ranch",
-                  "selected": false
-                },
-                {
-                  "name": "Greek",
-                  "selected": false
-                },
-                {
-                  "name": "Balsamic",
-                  "selected": true
-                },
-                {
-                  "name": "Caesar",
-                  "selected": false
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    }
-  ],
-  "desserts": [
-    {
-      "category": "Premade",
-      "products": [{"name": "Cookies"}, {"name": "Brownies"}]
-    },
-    {
-      "category": "Dessert Pizza",
-      "products": [
-        {
-          "name": "CinnaStix",
-          "choices": [
-            {
-              "field": "Size",
-              "options": [
-                {
-                  "name": "Small",
-                  "selected": false
-                },
-                {
-                  "name": "Medium",
-                  "selected": true
-                },
-                {
-                  "name": "Large",
-                  "selected": false
-                }
-              ]
-            },
-            {
-              "field": "Dipping Sauce",
-              "options": [
-                {
-                  "name": "Icing",
-                  "selected": true
-                },
-                {
-                  "name": "Dulce de Leche",
-                  "selected": false
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "S'Mores",
-          "choices": [
-            {
-              "field": "Size",
-              "options": [
-                {
-                  "name": "Small",
-                  "selected": false
-                },
-                {
-                  "name": "Medium",
-                  "selected": true
-                },
-                {
-                  "name": "Large",
-                  "selected": false
-                }
-              ]
-            },
-            {
-              "field": "Dipping Sauce",
-              "options": [
-                {
-                  "name": "Icing",
-                  "selected": false
-                },
-                {
-                  "name": "Dulce de Leche",
-                  "selected": false
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    }
-  ]
+  }
 }

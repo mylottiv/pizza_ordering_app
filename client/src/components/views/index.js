@@ -20,7 +20,7 @@ function ViewRouter(props) {
       <Route
         path="/product/:type"
         render={props => (
-          <Product content={storeData[props.match.params.type]} {...props} />
+          <Product content={storeData.menu[props.match.params.type]} {...props} />
         )}
       />
       <Route

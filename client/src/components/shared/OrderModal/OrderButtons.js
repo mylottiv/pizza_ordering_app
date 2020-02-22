@@ -27,12 +27,14 @@ function OrderButtons(props) {
               ref={register({required: true})}
             />
             <button
+              type="button"
               className="bg-blue-500 rounded-full h-16 w-16 flex items-center justify-center ml-6"
               onClick={() => updateQuantity("add")}
             >
               +
             </button>
             <button
+              type="button"
               className="bg-blue-500 rounded-full h-16 w-16 flex items-center justify-center ml-6"
               onClick={() => updateQuantity("subtract")}
             >

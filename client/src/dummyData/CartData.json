@@ -1,30 +1,105 @@
 {
-    "name": "Cart Contents",
-    "items": [
-        {
-            "productName": "Large Cheese",
-            "quantity": 2
-        }, 
-        {
-            "productName": "Calamari Rings",
-            "quantity": 1
-        },         
-        {
-            "productName": "Dr Pepper",
-            "quantity": 2
-        },
-        {
-            "couponName": "Buy One Get One Free",
-            "couponItems": [
-                {
-                    "productName": "Medium Pepperoni",
-                    "quantity": 1
-                },
-                {
-                    "productName": "Medium Sausage",
-                    "quantity": 1
+  "name": "Cart Contents",
+  "items": [
+    {
+      "productName": "BYOP",
+      "fields": {
+        "Crust": "Hand-Tossed",
+        "Size": "Medium",
+        "Sauce": "BBQ",
+        "Mozzarella": "whole",
+        "Cheddar": "whole",
+        "Feta": "",
+        "Pepperoni": "",
+        "Ham": "",
+        "Beef": "",
+        "Olives": "",
+        "Onions": "",
+        "Pineapple": "whole",
+        "Quantity": "2"
+      }
+    },
+    {
+      "productName": "Mozzarella Sticks",
+      "fields": {
+        "Size": "Medium",
+        "Dipping Sauce": "Marinara",
+        "Quantity": "1"
+      }
+    },
+    {
+      "productName": "Dr Pepper",
+      "quantity": 2
+    },
+    {
+      "couponName": "BOGO Lg 2-Topping",
+      "itemSlots": {
+        "fixedSize": true,
+        "slots": [
+          {
+            "eligibleItems": [
+              {
+                "type": "pizza",
+                "category": "BYOP",
+                "product": "BYOP",
+                "rules": {
+                  "size": "Large",
+                  "toppings": 2
                 }
-            ]
-        }
-    ]
+              }
+            ],
+            "selectedItem": {
+              "productName": "BYOP",
+              "fields": {
+                "Crust": "Hand-Tossed",
+                "Size": "Large",
+                "Sauce": "Marinara",
+                "Mozzarella": "whole",
+                "Cheddar": "",
+                "Feta": "",
+                "Pepperoni": "whole",
+                "Ham": "",
+                "Beef": "",
+                "Olives": "whole",
+                "Onions": "",
+                "Pineapple": "",
+                "Quantity": "1"
+              }
+            }
+          },
+          {
+            "eligibleItems": [
+              {
+                "type": "pizza",
+                "category": "BYOP",
+                "product": "BYOP",
+                "rules": {
+                  "size": "Large",
+                  "toppings": 2
+                }
+              }
+            ],
+            "selectedItem": {
+              "productName": "BYOP",
+              "fields": {
+                "Crust": "Hand-Tossed",
+                "Size": "Large",
+                "Sauce": "Marinara",
+                "Mozzarella": "whole",
+                "Cheddar": "",
+                "Feta": "",
+                "Pepperoni": "whole",
+                "Ham": "",
+                "Beef": "whole",
+                "Olives": "",
+                "Onions": "",
+                "Pineapple": "",
+                "Quantity": "1"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
 }

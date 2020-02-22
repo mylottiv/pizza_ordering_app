@@ -7,10 +7,19 @@ import ProductItemForm from "./ProductItemForm";
 // }
 
 function OrderModal(props) {
-  const {storeData, modalState} = useContext(CartContext);
+  const {storeData, modalState, cartDispatch} = useContext(CartContext);
   console.log("test", modalState);
   const {open, itemRef} = modalState;
   const {type, categoryIndex, productIndex} = itemRef;
+  // Product will be passed on render inside ProductItemForm
+  const onSubmit = product => data => {
+    const newItem = {
+      productName: product.name,
+      fields: data,
+    };
+    console.log("submit data", newItem);
+    cartDispatch({type: "add_item_to_cart", payload: newItem});
+  };
 
   return (
     <>
@@ -21,6 +30,7 @@ function OrderModal(props) {
               {true && (
                 <ProductItemForm
                   product={storeData[type][categoryIndex].products[productIndex]}
+                  onSubmit={onSubmit}
                 />
               )}
             </OrderFormContext>
