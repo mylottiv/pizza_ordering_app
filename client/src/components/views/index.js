@@ -11,7 +11,11 @@ function ViewRouter(props) {
   return (
     <Switch>
       <Route exact path="/" render={() => <Redirect to="/home" />} />
-      <Route exact path="/home" render={props => <Home {...props} />} />
+      <Route
+        exact
+        path="/home"
+        render={props => <Home coupons={storeData.coupons} {...props} />}
+      />
       <Route
         exact
         path="/myCart"

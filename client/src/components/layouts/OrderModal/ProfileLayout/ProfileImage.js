@@ -1,6 +1,6 @@
 import React from "react";
 
-function ProductProfileImage(props) {
+function ProfileImage(props) {
   return (
     <div className="flex flex-col w-1/6 h-1/6">
       <img
@@ -12,4 +12,4 @@ function ProductProfileImage(props) {
   );
 }
 
-export default ProductProfileImage;
+export default ProfileImage;

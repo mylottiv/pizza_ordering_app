@@ -42,14 +42,20 @@ export const CartProvider = props => {
   // Reducer reference for toggling and populating order modal
   const modalReference = {
     // Toggles modal open and saves item reference
-    open_modal: (selectedItem, modalState) => {
-      return {...modalState, open: true, itemRef: selectedItem};
+    open_modal: (payload, modalState) => {
+      return {
+        ...modalState,
+        open: true,
+        coupon: payload.coupon,
+        itemRef: payload.selectedItem,
+      };
     },
 
     close_modal: (saveItemFlag, modalState) => {
       return {
         ...modalState,
         open: false,
+        coupon: false,
         itemRef: {type: "", categoryIndex: -1, productIndex: -1},
       };
     },
@@ -61,6 +67,7 @@ export const CartProvider = props => {
   const [cartState, cartDispatch] = useReducer(reducer(cartReference), dummyCart);
   const [modalState, modalDispatch] = useReducer(reducer(modalReference), {
     open: false,
+    coupon: false,
     itemRef: {type: "", categoryIndex: -1, productIndex: -1},
   });
 

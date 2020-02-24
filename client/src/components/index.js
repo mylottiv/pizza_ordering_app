@@ -4,7 +4,11 @@ export {default as SideBarLayout} from "./layouts/SideBar";
 export {default as ContentLayout} from "./layouts/Content";
 export {default as CategoryLayout} from "./layouts/Category";
 export {ProductItemCartLayout, CouponItemCartLayout} from "./layouts/CartItem";
-export {ProductItemModalLayout, CouponItemModalLayout} from "./layouts/OrderModal";
+export {
+  ProductItemModalLayout,
+  CouponItemModalLayout,
+  ModalProfileLayout,
+} from "./layouts/OrderModal";
 export {default as MainLayout} from "./layouts/Main";
 export {default as ViewRouter} from "./views";
 export {default as CartButton} from "./shared/CartButton";

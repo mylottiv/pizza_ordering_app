@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
-import {CartContext} from "../../../";
+import {CartContext} from "../../..";
 
-function ProductHeader({name}) {
+function Header({name}) {
   const {modalDispatch} = useContext(CartContext);
 
   return (
@@ -19,4 +19,4 @@ function ProductHeader({name}) {
   );
 }
 
-export default ProductHeader;
+export default Header;

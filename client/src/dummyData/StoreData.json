@@ -59,50 +59,59 @@
                 ]
               }
             ],
-            "toppings": {
-              "cheese": [
-                {
-                  "name": "Mozzarella",
-                  "selected": false
-                },
-                {
-                  "name": "Cheddar",
-                  "selected": false
-                },
-                {
-                  "name": "Feta",
-                  "selected": false
-                }
-              ],
-              "meats": [
-                {
-                  "name": "Pepperoni",
-                  "selected": false
-                },
-                {
-                  "name": "Ham",
-                  "selected": false
-                },
-                {
-                  "name": "Beef",
-                  "selected": false
-                }
-              ],
-              "veggies": [
-                {
-                  "name": "Olives",
-                  "selected": false
-                },
-                {
-                  "name": "Onions",
-                  "selected": false
-                },
-                {
-                  "name": "Pineapple",
-                  "selected": false
-                }
-              ]
-            }
+            "ingredients": [
+              {
+                "category": "cheese",
+                "toppings": [
+                  {
+                    "name": "Mozzarella",
+                    "selected": false
+                  },
+                  {
+                    "name": "Cheddar",
+                    "selected": false
+                  },
+                  {
+                    "name": "Feta",
+                    "selected": false
+                  }
+                ]
+              },
+              {
+                "category": "meats",
+                "toppings": [
+                  {
+                    "name": "Pepperoni",
+                    "selected": false
+                  },
+                  {
+                    "name": "Ham",
+                    "selected": false
+                  },
+                  {
+                    "name": "Beef",
+                    "selected": false
+                  }
+                ]
+              },
+              {
+                "category": "veggies",
+                "toppings": [
+                  {
+                    "name": "Olives",
+                    "selected": false
+                  },
+                  {
+                    "name": "Onions",
+                    "selected": false
+                  },
+                  {
+                    "name": "Pineapple",
+                    "selected": false
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -659,9 +668,10 @@
       }
     ]
   },
-  "coupons": {
-    "BOGO": {
+  "coupons": [
+    {
       "couponName": "BOGO Lg 2-Topping",
+      "description": "Buy one large two topping pizza get the second one free!",
       "itemSlots": {
         "fixedSize": true,
         "slots": [
@@ -675,7 +685,12 @@
                   "size": "Large",
                   "toppings": 2
                 }
-              },
+              }
+            ],
+            "selectedItem": {}
+          },
+          {
+            "eligibleItems": [
               {
                 "type": "pizza",
                 "category": "BYOP",
@@ -685,10 +700,11 @@
                   "toppings": 2
                 }
               }
-            ]
+            ],
+            "selectedItem": {}
           }
         ]
       }
     }
-  }
+  ]
 }
