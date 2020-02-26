@@ -15,3 +15,4 @@ export {default as CartButton} from "./shared/CartButton";
 export {default as Category} from "./shared/Category";
 export {default as SideBar} from "./shared/SideBar/";
 export {default as OrderModal} from "./shared/OrderModal";
+export {default as StoreItemCard} from "./shared/StoreItemCard";

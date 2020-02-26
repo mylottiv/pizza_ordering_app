@@ -1,18 +1,18 @@
 import React from "react";
 import {CategoryLayout} from "../..";
-import ProductCard from "./ProductCard";
+import StoreItemCard from "../../shared/StoreItemCard";
 
-function ProductList({itemRef, content}) {
+function ProductList({itemRef, list}) {
   // Populates with Product Cards
-  const renderContent = content.products.map((product, index) => (
-    <ProductCard
+  const renderContent = list.products.map((product, index) => (
+    <StoreItemCard
       key={product.name}
       name={product.name}
       itemRef={{...itemRef, productIndex: index}}
     />
   ));
 
-  return <CategoryLayout name={content.category}>{renderContent}</CategoryLayout>;
+  return <CategoryLayout name={list.category}>{renderContent}</CategoryLayout>;
 }
 
 export default ProductList;

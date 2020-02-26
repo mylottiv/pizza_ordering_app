@@ -13,7 +13,7 @@ function ProductItemForm({product, onSubmit}) {
       onSubmit={handleSubmit(onSubmit(product))}
     >
       <ProductProfile name={product.name} choices={product.choices} />
-      <AdditionalOptions choices={product.ingredients && product.ingredients} />
+      {product.ingredients && <AdditionalOptions choices={product.ingredients} />}
       <OrderButtons />
     </form>
   );

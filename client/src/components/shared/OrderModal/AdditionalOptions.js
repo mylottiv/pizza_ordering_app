@@ -1,9 +1,13 @@
 import React from "react";
 import ToppingOptions from "./ToppingOptions";
-import CouponProductCategory from "./CouponProductCategory";
-function AdditionalOptions({choices}) {
+import CouponProductSlot from "./CouponProductSlot";
+function AdditionalOptions(props) {
+  const {choices} = props;
+
+  console.log("everybody got", choices);
+
   const itemOptions = (childArray => {
-    return childArray[0].toppings
+    return childArray[0] && childArray[0].toppings
       ? childArray.map(category => (
           <ToppingOptions
             key={category.category}
@@ -12,7 +16,14 @@ function AdditionalOptions({choices}) {
           />
         ))
       : childArray.map((item, index) => {
-          return <CouponProductCategory key={index} item={item} index={index} />;
+          return (
+            <CouponProductSlot
+              key={index}
+              couponName={props.couponName}
+              item={item}
+              index={index}
+            />
+          );
         });
   })(choices);
 

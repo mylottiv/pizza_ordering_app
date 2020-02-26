@@ -10,23 +10,37 @@ import CouponItemForm from "./CouponItemForm";
 function OrderModal(props) {
   const {storeData, modalState, cartDispatch} = useContext(CartContext);
   console.log("test", modalState);
-  const {open, coupon, itemRef} = modalState;
+  const {
+    open,
+    coupon,
+    openCoupon,
+    openCouponName,
+    openCouponSlotIndex,
+    itemRef,
+  } = modalState;
+  // TODO: ensure that when a product is opened from inside a coupon, its submit function will add an item to the coupon in the cart specifically.
   // Product will be passed on render inside ProductItemForm
-  const onSubmit = item => data => {
-    // IIE to check whether newItem is a coupon or product, and to format the payload accordingly
-    const newItem = (coupon => {
-      return coupon
-        ? {
-            productName: item.name,
-            fields: data,
-          }
-        : {
-            couponName: item.couponName,
-            data: data,
-          };
-    })(item.couponName);
+  const onSubmit = (
+    couponRef = {couponName: "", open: false, couponIndex: -1}
+  ) => item => data => {
+    const {couponName, open, couponIndex} = couponRef;
+    console.log("couponRef", couponRef, couponName, open);
+
+    // Will either add item directly to cart, or add product to coupon in cart
+    const newItem = {
+      productName: item.name,
+      fields: data,
+    };
     console.log("submit data", newItem);
-    cartDispatch({type: "add_item_to_cart", payload: newItem});
+    cartDispatch({
+      type: `add_item_to_${open ? "coupon" : "cart"}`,
+      payload: open
+        ? {
+            newItem: newItem,
+            couponRef: {couponName: couponName, couponIndex: couponIndex},
+          }
+        : newItem,
+    });
   };
 
   return (
@@ -42,12 +56,21 @@ function OrderModal(props) {
                       itemRef.productIndex
                     ]
                   }
-                  onSubmit={onSubmit}
+                  // If product is opened from inside a coupon, submit handler will be different
+                  onSubmit={
+                    openCoupon
+                      ? onSubmit({
+                          couponName: openCouponName,
+                          open: openCoupon,
+                          couponIndex: openCouponSlotIndex,
+                        })
+                      : onSubmit()
+                  }
                 />
               ) : (
                 <CouponItemForm
                   coupon={storeData.coupons[itemRef.couponIndex]}
-                  onSubmit={onSubmit}
+                  onSubmit={onSubmit()}
                 />
               )}
             </OrderFormContext>

@@ -1,8 +1,8 @@
 import React, {useContext} from "react";
-import {CartContext} from "../../contexts/CartContext";
+import {CartContext} from "..";
 
-function ProductCard({name, itemRef}) {
-  const {modalDispatch} = useContext(CartContext);
+function StoreItemCard({coupon, name, itemRef}) {
+  const {modalDispatch, cartDispatch} = useContext(CartContext);
 
   console.log("itemRef test", itemRef);
 
@@ -24,12 +24,20 @@ function ProductCard({name, itemRef}) {
         <div className="flex flex-row-reverse px-6 py-4 items-right">
           <button
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-            onClick={() =>
+            onClick={() => {
               modalDispatch({
                 type: "open_modal",
-                payload: {coupon: false, selectedItem: itemRef},
-              })
-            }
+                payload: {
+                  coupon: coupon ? true : false,
+                  couponName: coupon ? name : "",
+                  selectedItem: itemRef,
+                },
+              });
+              return (
+                itemRef.couponName &&
+                cartDispatch({type: "add_coupon_to_cart", payload: itemRef})
+              );
+            }}
           >
             Order
           </button>
@@ -39,4 +47,4 @@ function ProductCard({name, itemRef}) {
   );
 }
 
-export default ProductCard;
+export default StoreItemCard;

@@ -7,7 +7,7 @@ function Home({coupons}) {
   return (
     <MainLayout>
       <ContentLayout name="Home">
-        <CouponList content={coupons} />
+        <CouponList list={coupons} />
         <Category content={{name: "HOME TEST"}} />
         <Category content={{name: "HOME TEST"}} />
         <Category content={{name: "HOME TEST"}} />

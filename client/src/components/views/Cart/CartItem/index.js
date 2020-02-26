@@ -11,7 +11,9 @@ function CartItem({item, index}) {
 
   return (
     <>
-      {item.couponName && <CouponItem couponRef={itemRef} items={item.itemSlots.slots} />}
+      {item.couponName && (
+        <CouponItem couponRef={itemRef} items={item.itemSlots.options} />
+      )}
       {item.productName && (
         <ProductItem
           itemRef={itemRef}

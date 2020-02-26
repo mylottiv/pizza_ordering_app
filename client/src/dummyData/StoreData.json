@@ -674,7 +674,7 @@
       "description": "Buy one large two topping pizza get the second one free!",
       "itemSlots": {
         "fixedSize": true,
-        "slots": [
+        "options": [
           {
             "eligibleItems": [
               {

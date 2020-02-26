@@ -1,13 +1,16 @@
 import React from "react";
 import {CategoryLayout} from "../..";
-import CouponCard from "./CouponCard";
+import StoreItemCard from "../../shared/StoreItemCard";
 
-function CouponList({content}) {
-  console.log(content);
-
+function CouponList({list}) {
   // Populates with Product Cards
-  const renderContent = content.map((coupon, index) => (
-    <CouponCard key={index} name={coupon.couponName} index={index} />
+  const renderContent = list.map((coupon, index) => (
+    <StoreItemCard
+      key={index}
+      coupon={true}
+      name={coupon.couponName}
+      itemRef={{couponName: coupon.couponName, couponIndex: index}}
+    />
   ));
 
   return <CategoryLayout name={"Coupons"}>{renderContent}</CategoryLayout>;

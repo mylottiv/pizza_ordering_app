@@ -1,9 +1,9 @@
 import React, {useContext} from "react";
 import {CartContext} from "../../contexts/CartContext";
-import {CategoryLayout} from "../../";
-import ProductCard from "../../views/Product/ProductCard";
+import {CategoryLayout} from "../..";
+import StoreItemCard from "../StoreItemCard";
 
-function CouponProductCategory({item, index}) {
+function CouponProductSlot({couponName, item, index}) {
   const {storeData} = useContext(CartContext);
 
   const eligibleProducts = item.eligibleItems.map(({type, category, product}) => {
@@ -18,11 +18,18 @@ function CouponProductCategory({item, index}) {
       type: type,
       categoryIndex: categoryIndex,
       productIndex: productIndex,
+      couponIndex: index,
     };
-    return <ProductCard key={product} name={product} itemRef={itemRef} />;
+    return (
+      <StoreItemCard key={product} coupon={false} name={product} itemRef={itemRef} />
+    );
   });
 
-  return <CategoryLayout name={`flex${index}`}>{eligibleProducts}</CategoryLayout>;
+  return (
+    <CategoryLayout name={`Item ${index + 1}`} modal={true}>
+      {eligibleProducts}
+    </CategoryLayout>
+  );
 }
 
-export default CouponProductCategory;
+export default CouponProductSlot;

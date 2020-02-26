@@ -18,7 +18,7 @@ function Product({match, content}) {
       <ProductList
         key={category.category}
         itemRef={{...itemRef, categoryIndex: index}}
-        content={category}
+        list={category}
       />
     );
   });
