@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://mylottiv.github.io/pizza-ordering-app",
+  "homepage": "http://mylottiv.github.io/pizza_ordering_app",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
