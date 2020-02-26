@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c54edd5bba91190365a3ff7adc1c14ca",
+    "revision": "468f6d7cf99ff61b717ad5ef9c927aa7",
     "url": "/pizza-ordering-app/index.html"
   },
   {
-    "revision": "19b0cf6e2c61f211b0a9",
+    "revision": "bfca29df62b6cbd2908f",
     "url": "/pizza-ordering-app/static/css/main.615f8512.chunk.css"
   },
   {
-    "revision": "88dda4daedc51e21e4eb",
-    "url": "/pizza-ordering-app/static/js/2.1b91dc51.chunk.js"
+    "revision": "1c48bda433b7bfd64c4b",
+    "url": "/pizza-ordering-app/static/js/2.19ddfdac.chunk.js"
   },
   {
     "revision": "1af6562b6d659632968c2e5e85a5b301",
-    "url": "/pizza-ordering-app/static/js/2.1b91dc51.chunk.js.LICENSE"
+    "url": "/pizza-ordering-app/static/js/2.19ddfdac.chunk.js.LICENSE"
   },
   {
-    "revision": "19b0cf6e2c61f211b0a9",
-    "url": "/pizza-ordering-app/static/js/main.5cee8714.chunk.js"
+    "revision": "bfca29df62b6cbd2908f",
+    "url": "/pizza-ordering-app/static/js/main.69b28710.chunk.js"
   },
   {
     "revision": "66512ab844e883d8deed",
