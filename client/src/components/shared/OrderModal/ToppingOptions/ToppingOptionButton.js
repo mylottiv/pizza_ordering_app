@@ -13,7 +13,7 @@ function ToppingOptionButton({topping, selected}) {
           className="form-radio"
           name={topping}
           value="left"
-          ref={register({required: true})}
+          ref={register({})}
         />
       </div>
       <div className="flex-1 flex-col">
@@ -23,7 +23,7 @@ function ToppingOptionButton({topping, selected}) {
           name={topping}
           defaultChecked={selected && true}
           value="whole"
-          ref={register({required: true})}
+          ref={register({})}
         />
       </div>
       <div className="flex-1 flex-col">
@@ -32,7 +32,7 @@ function ToppingOptionButton({topping, selected}) {
           className="form-radio"
           name={topping}
           value="right"
-          ref={register({required: true})}
+          ref={register({})}
         />
       </div>
       <div className="flex-1 flex-col">{topping}</div>
