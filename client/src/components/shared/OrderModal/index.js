@@ -1,14 +1,19 @@
-import React, {useContext} from "react";
-import {CartContext, OrderFormContext} from "../../";
+import React from "react";
+import {useSelector, useDispatch} from "react-redux";
+import {OrderFormContext} from "../../";
 import ProductItemForm from "./ProductItemForm";
 import CouponItemForm from "./CouponItemForm";
+import allActions from "../../../store/actions";
 
 // function CouponItemModalForm(props) {
 
 // }
 
 function OrderModal(props) {
-  const {storeData, modalState, cartDispatch} = useContext(CartContext);
+  const storeData = useSelector(state => state.storeData);
+  const modalState = useSelector(state => state.modal);
+  // const
+  const dispatch = useDispatch();
   console.log("test", modalState);
   const {
     open,
@@ -32,15 +37,19 @@ function OrderModal(props) {
       fields: data,
     };
     console.log("submit data", newItem);
-    cartDispatch({
-      type: `add_item_to_${open ? "coupon" : "cart"}`,
-      payload: open
-        ? {
-            newItem: newItem,
-            couponRef: {couponName: couponName, couponIndex: couponIndex},
-          }
-        : newItem,
-    });
+    dispatch(
+      allActions.cart[open ? "addItemToCoupon" : "addItemToCart"](
+        // IIE unless the ternary operator doesnt require this wrapping
+        (() => {
+          return open
+            ? {
+                newItem: newItem,
+                couponRef: {couponName: couponName, couponIndex: couponIndex},
+              }
+            : newItem;
+        })()
+      )
+    );
   };
 
   return (
@@ -68,10 +77,7 @@ function OrderModal(props) {
                   }
                 />
               ) : (
-                <CouponItemForm
-                  coupon={storeData.coupons[itemRef.couponIndex]}
-                  onSubmit={onSubmit()}
-                />
+                <CouponItemForm coupon={itemRef} onSubmit={onSubmit()} />
               )}
             </OrderFormContext>
           </div>

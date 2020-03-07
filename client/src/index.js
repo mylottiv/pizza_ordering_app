@@ -2,12 +2,20 @@ import React from "react";
 import ReactDOM from "react-dom";
 import {HashRouter} from "react-router-dom";
 import App from "./App";
+import {createStore} from "redux";
+import {Provider} from "react-redux";
+import rootReducer from "./store/reducers";
+
 // import * as serviceWorker from "./serviceWorker";
 import "./styles/tailwind.css";
 
+const store = createStore(rootReducer);
+
 ReactDOM.render(
   <HashRouter>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </HashRouter>,
   document.getElementById("root")
 );

@@ -1,10 +1,11 @@
-import React, {useContext} from "react";
-import {CartContext} from "..";
+import React from "react";
+import {useDispatch} from "react-redux";
+import {allActions} from "../";
 
-function StoreItemCard({coupon, name, itemRef}) {
-  const {modalDispatch, cartDispatch} = useContext(CartContext);
+function StoreItemCard({coupon, name, selectedItem}) {
+  const dispatch = useDispatch();
 
-  console.log("itemRef test", itemRef);
+  console.log("selectedItem test", selectedItem);
 
   return (
     <div className="flex flex-col rounded bg-gray-100 p-3 mx-3 my-2">
@@ -25,17 +26,17 @@ function StoreItemCard({coupon, name, itemRef}) {
           <button
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
             onClick={() => {
-              modalDispatch({
-                type: "open_modal",
-                payload: {
+              dispatch(
+                allActions.modal.openModal({
                   coupon: coupon ? true : false,
                   couponName: coupon ? name : "",
-                  selectedItem: itemRef,
-                },
-              });
+                  selectedItem: selectedItem,
+                })
+              );
+              // If item was added as part of a coupon add item to relevant coupon in cart
               return (
-                itemRef.couponName &&
-                cartDispatch({type: "add_coupon_to_cart", payload: itemRef})
+                selectedItem.couponName &&
+                dispatch(allActions.cart.addCouponToCart(selectedItem))
               );
             }}
           >

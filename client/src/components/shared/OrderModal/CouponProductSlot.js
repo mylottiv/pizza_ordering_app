@@ -1,10 +1,10 @@
-import React, {useContext} from "react";
-import {CartContext} from "../../contexts/CartContext";
+import React from "react";
+import {useSelector} from "react-redux";
 import {CategoryLayout} from "../..";
 import StoreItemCard from "../StoreItemCard";
 
 function CouponProductSlot({couponName, item, index}) {
-  const {storeData} = useContext(CartContext);
+  const storeData = useSelector(state => state.storeData);
 
   const eligibleProducts = item.eligibleItems.map(({type, category, product}) => {
     const storeRef = storeData.menu[type];
@@ -21,7 +21,7 @@ function CouponProductSlot({couponName, item, index}) {
       couponIndex: index,
     };
     return (
-      <StoreItemCard key={product} coupon={false} name={product} itemRef={itemRef} />
+      <StoreItemCard key={product} coupon={false} name={product} selectedItem={itemRef} />
     );
   });
 

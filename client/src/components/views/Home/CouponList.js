@@ -9,7 +9,7 @@ function CouponList({list}) {
       key={index}
       coupon={true}
       name={coupon.couponName}
-      itemRef={{couponName: coupon.couponName, couponIndex: index}}
+      selectedItem={coupon}
     />
   ));
 

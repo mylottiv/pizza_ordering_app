@@ -1,8 +1,9 @@
-import React, {useContext} from "react";
-import {CartContext} from "../../..";
+import React from "react";
+import {useDispatch} from "react-redux";
+import {allActions} from "../../../";
 
 function Header({name}) {
-  const {modalDispatch} = useContext(CartContext);
+  const dispatch = useDispatch();
 
   return (
     <div className="flex flex-row">
@@ -10,7 +11,7 @@ function Header({name}) {
         <h1 className="flex-1 text-2xl text-center font-bold">{name}</h1>
         <button
           className="bg-red-700 h-16 w-16 rounded-lg"
-          onClick={() => modalDispatch({type: "close_modal", payload: {}})}
+          onClick={() => dispatch(allActions.modal.closeModal({}))}
         >
           X
         </button>

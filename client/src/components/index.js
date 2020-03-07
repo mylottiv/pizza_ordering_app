@@ -1,3 +1,6 @@
+// Redux Actions reference
+export {default as allActions} from "../store/actions";
+
 export {CartContext, CartProvider} from "./contexts/CartContext";
 export {default as OrderFormContext} from "./contexts/OrderFormContext";
 export {default as SideBarLayout} from "./layouts/SideBar";

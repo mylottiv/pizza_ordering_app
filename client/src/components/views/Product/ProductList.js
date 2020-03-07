@@ -8,7 +8,7 @@ function ProductList({itemRef, list}) {
     <StoreItemCard
       key={product.name}
       name={product.name}
-      itemRef={{...itemRef, productIndex: index}}
+      selectedItem={{...itemRef, productIndex: index}}
     />
   ));
 

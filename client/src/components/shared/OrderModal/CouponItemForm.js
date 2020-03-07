@@ -6,7 +6,7 @@ import OrderButtons from "./OrderButtons";
 
 function CouponItemForm({coupon, onSubmit}) {
   // const {handleSubmit} = useFormContext();
-  console.log("coupon", coupon.itemSlots);
+  console.log("coupon", coupon);
 
   return (
     <form

@@ -1,12 +1,13 @@
-import React, {useContext} from "react";
+import React from "react";
+import {useSelector} from "react-redux";
 import {Switch, Route, Redirect} from "react-router-dom";
 import Home from "./Home";
 import Cart from "./Cart";
 import Product from "./Product";
-import {CartContext} from "..";
 
 function ViewRouter(props) {
-  const {cartState, storeData} = useContext(CartContext);
+  const cartState = useSelector(state => state.cart);
+  const storeData = useSelector(state => state.storeData);
 
   return (
     <Switch>
