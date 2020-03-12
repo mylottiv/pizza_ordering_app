@@ -1,16 +1,12 @@
 import React from "react";
+import allActions from "../../../../../store/actions";
 
 function CartButtons({index, dispatch}) {
   return (
     <div className="flex flex-row-reverse px-2 py-2 items-right">
       <button
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mx-3"
-        onClick={() =>
-          dispatch({
-            type: "remove_item_from_cart",
-            payload: index,
-          })
-        }
+        onClick={() => dispatch(allActions.cart.removeItemFromCart(index))}
       >
         Remove
       </button>

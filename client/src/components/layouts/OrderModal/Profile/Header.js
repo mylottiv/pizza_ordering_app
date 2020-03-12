@@ -1,6 +1,6 @@
 import React from "react";
 import {useDispatch} from "react-redux";
-import {allActions} from "../../../";
+import {allActions} from "../../..";
 
 function Header({name}) {
   const dispatch = useDispatch();

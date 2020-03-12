@@ -1,10 +1,11 @@
-import React, {useContext} from "react";
-import {ProductItemCartLayout, CartContext} from "../../../..";
+import React from "react";
+import {useDispatch} from "react-redux";
+import {ProductItemCartLayout} from "../../../..";
 import Header from "./Header";
 import Content from "./Content";
 
 function ProductItem({itemRef, fields}) {
-  const {cartDispatch} = useContext(CartContext);
+  const cartDispatch = useDispatch();
   const {name, cartIndex} = itemRef;
 
   return (

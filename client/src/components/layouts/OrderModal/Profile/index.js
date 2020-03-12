@@ -2,7 +2,7 @@ import React from "react";
 import ProfileImage from "./ProfileImage";
 import Header from "./Header";
 
-function ProfileLayout({name, children}) {
+function Profile({name, children}) {
   return (
     <div className="flex flex-row">
       <ProfileImage />
@@ -14,4 +14,4 @@ function ProfileLayout({name, children}) {
   );
 }
 
-export default ProfileLayout;
+export default Profile;

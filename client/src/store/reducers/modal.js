@@ -12,16 +12,16 @@ const modalReference = {
       open: true,
       coupon: payload.coupon,
       // Flag whether product is opened inside of coupon
-      openCoupon: ((state, payload) => {
-        return state === true ? true : payload;
-      })(modalState.openCoupon, payload.coupon),
-      openCouponName: ((state, payload) => {
-        return payload !== "" ? payload : state;
-      })(modalState.openCouponName, payload.couponName),
-      openCouponSlotIndex: payload.couponSlotIndex,
-      itemRef: payload.couponSlotIndex
-        ? {...payload.selectedItem, couponSlotIndex: -1}
-        : payload.selectedItem,
+      // openCoupon: ((state, payload) => {
+      //   return state === true ? true : payload;
+      // })(modalState.openCoupon, payload.coupon),
+      // openCouponName: ((state, payload) => {
+      //   return payload !== "" ? payload : state;
+      // })(modalState.openCouponName, payload.couponName),
+      // openCouponSlotIndex: payload.couponSlotIndex,
+      // itemRef: payload.couponSlotIndex
+      //   ? {...payload.selectedItem, couponSlotIndex: -1}
+      //   : payload.selectedItem,
     };
   },
 
@@ -30,10 +30,10 @@ const modalReference = {
       ...modalState,
       open: false,
       coupon: false,
-      openCoupon: false,
-      openCouponName: "",
-      openCouponSlotIndex: -1,
-      itemRef: {type: "", categoryIndex: -1, productIndex: -1},
+      // openCoupon: false,
+      // openCouponName: "",
+      // openCouponSlotIndex: -1,
+      // itemRef: {type: "", categoryIndex: -1, productIndex: -1},
     };
   },
 };

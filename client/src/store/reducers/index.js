@@ -25,7 +25,7 @@ const reducers = {
       openCoupon: false,
       openCouponName: "",
       openCouponSlotIndex: -1,
-      itemRef: {type: "", categoryIndex: -1, productIndex: -1},
+      selectedItem: {type: "", categoryIndex: -1, productIndex: -1},
     },
     orderWizardReference
   ),
