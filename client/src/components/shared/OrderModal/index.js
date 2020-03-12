@@ -3,54 +3,16 @@ import {useSelector, useDispatch} from "react-redux";
 import {OrderFormContext} from "../../";
 import ProductItemForm from "./ProductItemForm";
 import CouponItemForm from "./CouponItemForm";
-import allActions from "../../../store/actions";
-
-// function CouponItemModalForm(props) {
-
-// }
+import submitHandlerFactory from "./submitHandlerFactory";
 
 function OrderModal(props) {
   const storeData = useSelector(state => state.storeData);
   const modalState = useSelector(state => state.modal);
-  // const
+  const wizardState = useSelector(state => state.orderWizard);
   const dispatch = useDispatch();
   console.log("test", modalState);
-  const {
-    open,
-    coupon,
-    openCoupon,
-    openCouponName,
-    openCouponSlotIndex,
-    itemRef,
-  } = modalState;
-  // TODO: ensure that when a product is opened from inside a coupon, its submit function will add an item to the coupon in the cart specifically.
-  // Product will be passed on render inside ProductItemForm
-  const onSubmit = (
-    couponRef = {couponName: "", open: false, couponIndex: -1}
-  ) => item => data => {
-    const {couponName, open, couponIndex} = couponRef;
-    console.log("couponRef", couponRef, couponName, open);
-
-    // Will either add item directly to cart, or add product to coupon in cart
-    const newItem = {
-      productName: item.name,
-      fields: data,
-    };
-    console.log("submit data", newItem);
-    dispatch(
-      allActions.cart[open ? "addItemToCoupon" : "addItemToCart"](
-        // IIE unless the ternary operator doesnt require this wrapping
-        (() => {
-          return open
-            ? {
-                newItem: newItem,
-                couponRef: {couponName: couponName, couponIndex: couponIndex},
-              }
-            : newItem;
-        })()
-      )
-    );
-  };
+  const {open, coupon} = modalState;
+  const {openCoupon, openCouponName, openCouponSlotIndex, selectedItem} = wizardState;
 
   return (
     <>
@@ -61,23 +23,25 @@ function OrderModal(props) {
               {!coupon ? (
                 <ProductItemForm
                   product={
-                    storeData.menu[itemRef.type][itemRef.categoryIndex].products[
-                      itemRef.productIndex
-                    ]
+                    storeData.menu[selectedItem.type][selectedItem.categoryIndex]
+                      .products[selectedItem.productIndex]
                   }
                   // If product is opened from inside a coupon, submit handler will be different
                   onSubmit={
                     openCoupon
-                      ? onSubmit({
+                      ? submitHandlerFactory(dispatch, {
                           couponName: openCouponName,
                           open: openCoupon,
-                          couponIndex: openCouponSlotIndex,
+                          couponSlotIndex: openCouponSlotIndex,
                         })
-                      : onSubmit()
+                      : submitHandlerFactory(dispatch)
                   }
                 />
               ) : (
-                <CouponItemForm coupon={itemRef} onSubmit={onSubmit()} />
+                <CouponItemForm
+                  coupon={selectedItem}
+                  onSubmit={submitHandlerFactory(dispatch)}
+                />
               )}
             </OrderFormContext>
           </div>

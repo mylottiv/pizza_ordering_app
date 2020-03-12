@@ -7,6 +7,7 @@ function ProductList({itemRef, list}) {
   const renderContent = list.products.map((product, index) => (
     <StoreItemCard
       key={product.name}
+      couponRef={{coupon: false, couponSlotIndex: -1}}
       name={product.name}
       selectedItem={{...itemRef, productIndex: index}}
     />

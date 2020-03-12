@@ -7,7 +7,7 @@ import {Provider} from "react-redux";
 import rootReducer from "./store/reducers";
 
 // import * as serviceWorker from "./serviceWorker";
-import "./styles/tailwind.css";
+import "./styles/index.css";
 
 const store = createStore(rootReducer);
 

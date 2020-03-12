@@ -1,7 +1,7 @@
 import React from "react";
 import {useSelector} from "react-redux";
-import {CategoryLayout} from "../..";
-import StoreItemCard from "../StoreItemCard";
+import {CategoryLayout} from "../../..";
+import StoreItemCard from "../../StoreItemCard";
 
 function CouponProductSlot({couponName, item, index}) {
   const storeData = useSelector(state => state.storeData);
@@ -14,14 +14,18 @@ function CouponProductSlot({couponName, item, index}) {
     const productIndex = storeRef[categoryIndex].products.findIndex(
       productTest => productTest.name === product
     );
-    const itemRef = {
+    const selectedItem = {
       type: type,
       categoryIndex: categoryIndex,
       productIndex: productIndex,
-      couponIndex: index,
     };
     return (
-      <StoreItemCard key={product} coupon={false} name={product} selectedItem={itemRef} />
+      <StoreItemCard
+        key={product}
+        couponRef={{coupon: false, couponSlotIndex: index}}
+        name={product}
+        selectedItem={selectedItem}
+      />
     );
   });
 

@@ -1,5 +1,5 @@
 import React from "react";
-import {ModalProfileLayout as ProfileLayout} from "../../../";
+import {ModalProfileLayout as ProfileLayout} from "../../../../";
 
 function CouponProfile({name, description}) {
   return (

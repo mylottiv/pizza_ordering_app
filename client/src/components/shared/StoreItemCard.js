@@ -2,7 +2,7 @@ import React from "react";
 import {useDispatch} from "react-redux";
 import {allActions} from "../";
 
-function StoreItemCard({coupon, name, selectedItem}) {
+function StoreItemCard({couponRef, name, selectedItem}) {
   const dispatch = useDispatch();
 
   console.log("selectedItem test", selectedItem);
@@ -28,10 +28,21 @@ function StoreItemCard({coupon, name, selectedItem}) {
             onClick={() => {
               dispatch(
                 allActions.modal.openModal({
-                  coupon: coupon ? true : false,
-                  couponName: coupon ? name : "",
-                  selectedItem: selectedItem,
+                  coupon: couponRef.coupon ? true : false,
                 })
+              );
+              dispatch(
+                couponRef.coupon
+                  ? allActions.orderWizard.mountCoupon({
+                      coupon: true,
+                      couponName: name,
+                      // couponSlotIndex: couponRef.couponSlotIndex,
+                      selectedItem: selectedItem,
+                    })
+                  : allActions.orderWizard.mountProduct({
+                      couponSlotIndex: couponRef.couponSlotIndex,
+                      selectedItem: selectedItem,
+                    })
               );
               // If item was added as part of a coupon add item to relevant coupon in cart
               return (

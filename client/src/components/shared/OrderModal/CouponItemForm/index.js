@@ -1,8 +1,8 @@
 import React from "react";
 // import {useFormContext} from "react-hook-form";
 import CouponProfile from "./CouponProfile";
-import AdditionalOptions from "./AdditionalOptions";
-import OrderButtons from "./OrderButtons";
+import AdditionalOptions from "../AdditionalOptions";
+import OrderButtons from "../OrderButtons";
 
 function CouponItemForm({coupon, onSubmit}) {
   // const {handleSubmit} = useFormContext();

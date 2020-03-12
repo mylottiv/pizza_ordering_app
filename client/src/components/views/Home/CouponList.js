@@ -7,7 +7,7 @@ function CouponList({list}) {
   const renderContent = list.map((coupon, index) => (
     <StoreItemCard
       key={index}
-      coupon={true}
+      couponRef={{coupon: true, couponSlotIndex: -1}}
       name={coupon.couponName}
       selectedItem={coupon}
     />

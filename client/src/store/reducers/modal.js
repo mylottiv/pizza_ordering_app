@@ -4,7 +4,7 @@ const modalReference = {
     console.log(
       "coupon index initialization in modal state",
       payload,
-      payload.selectedItem.couponIndex
+      payload.couponSlotIndex
     );
 
     return {
@@ -18,11 +18,9 @@ const modalReference = {
       openCouponName: ((state, payload) => {
         return payload !== "" ? payload : state;
       })(modalState.openCouponName, payload.couponName),
-      openCouponSlotIndex: (index => {
-        return index !== -1 || index !== false ? index : -1;
-      })(payload.selectedItem.couponIndex & payload.selectedItem.couponIndex),
-      itemRef: payload.selectedItem.couponIndex
-        ? {...payload.selectedItem, couponIndex: -1}
+      openCouponSlotIndex: payload.couponSlotIndex,
+      itemRef: payload.couponSlotIndex
+        ? {...payload.selectedItem, couponSlotIndex: -1}
         : payload.selectedItem,
     };
   },

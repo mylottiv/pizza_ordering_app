@@ -16,18 +16,18 @@ const cartReference = {
 
   // Add Item to Coupon
   ADD_ITEM_TO_COUPON: ({newItem, couponRef}, cart) => {
-    const {couponName, couponIndex} = couponRef;
+    const {couponName, couponSlotIndex} = couponRef;
     const modifiedCart = cart.items.map(item => {
       console.log(
         "cartItem",
         item,
         "selected item?",
         couponName === item.couponName &&
-          item.itemSlots.options[couponIndex].selectedItem,
+          item.itemSlots.options[couponSlotIndex].selectedItem,
         "couponName",
         couponName,
-        "couponIndex",
-        couponIndex
+        "couponSlotIndex",
+        couponSlotIndex
       );
       return couponName === item.couponName
         ? {
@@ -35,7 +35,7 @@ const cartReference = {
             itemSlots: {
               ...item.itemSlots,
               options: item.itemSlots.options.map((item2, index) =>
-                couponIndex === index ? {...item2, selectedItem: newItem} : item2
+                couponSlotIndex === index ? {...item2, selectedItem: newItem} : item2
               ),
             },
           }
@@ -46,9 +46,11 @@ const cartReference = {
   },
 
   // Remove Item from Coupon
-  REMOVE_ITEM_FROM_COUPON: ({cartIndex, couponIndex}, cart) => {
+  REMOVE_ITEM_FROM_COUPON: ({cartIndex, couponSlotIndex}, cart) => {
     const modifiedCart = cart.items.map((item2, index) => {
-      return index === cartIndex ? (item2.slots[couponIndex].selectedItem = {}) : item2;
+      return index === cartIndex
+        ? (item2.slots[couponSlotIndex].selectedItem = {})
+        : item2;
     });
     return {...cart, items: modifiedCart};
   },
