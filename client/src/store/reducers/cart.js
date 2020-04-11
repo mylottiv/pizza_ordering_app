@@ -47,6 +47,8 @@ const cartReference = {
 
   // Remove Item from Coupon
   REMOVE_ITEM_FROM_COUPON: ({cartIndex, couponSlotIndex}, cart) => {
+    console.log("Remove Item from Coupon", cartIndex, couponSlotIndex, cart);
+
     const modifiedCart = cart.items.map((item2, index) => {
       return index === cartIndex
         ? (item2.slots[couponSlotIndex].selectedItem = {})

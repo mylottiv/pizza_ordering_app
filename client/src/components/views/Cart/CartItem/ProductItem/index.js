@@ -1,17 +1,27 @@
 import React from "react";
 import {useDispatch} from "react-redux";
 import {ProductItemCartLayout} from "../../../..";
+import allActions from "../../../../../store/actions";
 import Header from "./Header";
 import Content from "./Content";
 
-function ProductItem({itemRef, fields}) {
-  const cartDispatch = useDispatch();
-  const {name, cartIndex} = itemRef;
+function ProductItem({name, productRef, fields}) {
+  const dispatch = useDispatch();
+
+  console.log("productName", name);
+
+  const {coupon, cartIndex, couponIndex} = productRef;
+
+  const removeItemAction = coupon
+    ? allActions.cart.removeItemFromCoupon({cartIndex, couponIndex})
+    : allActions.cart.removeItemFromCart(cartIndex);
+
+  const removeHandler = () => dispatch(removeItemAction);
 
   return (
     <ProductItemCartLayout>
       <Header name={name} />
-      <Content fields={fields} cartRef={{index: cartIndex, dispatch: cartDispatch}} />
+      <Content fields={fields} removeHandler={removeHandler} />
     </ProductItemCartLayout>
   );
 }

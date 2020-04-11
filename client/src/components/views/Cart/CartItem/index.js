@@ -2,21 +2,18 @@ import React from "react";
 import CouponItem from "./CouponItem";
 import ProductItem from "./ProductItem";
 
-function CartItem({item, index}) {
-  const itemRef = {
-    name: item.productName ? item.productName : item.couponName,
-    cartIndex: index,
-  };
-  console.log(itemRef);
+function CartItem({item, cartIndex}) {
+  const name = item.productName ? item.productName : item.couponName;
 
   return (
     <>
       {item.couponName && (
-        <CouponItem couponRef={itemRef} items={item.itemSlots.options} />
+        <CouponItem name={name} cartIndex={cartIndex} items={item.itemSlots.options} />
       )}
       {item.productName && (
         <ProductItem
-          itemRef={itemRef}
+          name={name}
+          productRef={{coupon: false, cartIndex: cartIndex, couponIndex: -1}}
           fields={item.fields ? item.fields : item.quantity}
         />
       )}

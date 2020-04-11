@@ -1,9 +1,9 @@
 import React from "react";
 import ProductRadioOptions from "./ProductRadioOptions";
 
-// Clearly this component needs some rethinking
 function ItemProfile({content}) {
-  const formattedContent = content[0] ? (
+  console.log(content);
+  const formattedContent = Array.isArray(content) ? (
     content.map(field => (
       <ProductRadioOptions key={field.field} type={field.field} options={field.options} />
     ))

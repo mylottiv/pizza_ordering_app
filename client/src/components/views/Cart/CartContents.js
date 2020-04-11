@@ -5,7 +5,7 @@ import {default as CartItem} from "./CartItem";
 function CartContents({cart}) {
   // Populates with Cart Items
   const renderContent = cart.items.map((item, index) => (
-    <CartItem key={index} item={item} index={index} />
+    <CartItem key={index} item={item} cartIndex={index} />
   ));
 
   return (
