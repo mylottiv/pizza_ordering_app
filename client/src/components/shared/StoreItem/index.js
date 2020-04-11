@@ -1,5 +1,5 @@
 import React from "react";
-import StoreItemLayout from "../..";
+import {StoreItemLayout} from "../..";
 import ClickHandler from "./ClickHandler";
 
 function StoreItem({couponRef, name, selectedItem}) {
