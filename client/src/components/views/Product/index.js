@@ -6,13 +6,13 @@ function Product({match, content}) {
   const productType = match.params.type;
   const name = productType.substring(0, 1).toUpperCase() + productType.substring(1);
 
-  // Add reference information as needed to itemRef down the render tree
   const itemRef = {
     type: productType,
     categoryIndex: -1,
     productIndex: -1,
   };
 
+  // Add reference information as needed to itemRef down the render tree
   const categories = content.map((category, index) => {
     return (
       <ProductList
