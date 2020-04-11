@@ -25,7 +25,7 @@ const cartActions = {
   },
   removeItemFromCoupon: payload => {
     return {
-      type: "REMOVE_ITEM_FROM_COUPON:",
+      type: "REMOVE_ITEM_FROM_COUPON",
       payload: payload,
     };
   },

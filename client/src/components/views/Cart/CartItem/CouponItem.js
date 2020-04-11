@@ -10,7 +10,7 @@ function CouponItem({name, cartIndex, items}) {
       <ProductItem
         key={index}
         name={productName ? productName : "Unselected"}
-        productRef={{coupon: true, cartIndex: cartIndex, couponIndex: index}}
+        productRef={{coupon: true, cartIndex: cartIndex, couponSlotIndex: index}}
         fields={fields ? fields : ""}
       />
     );

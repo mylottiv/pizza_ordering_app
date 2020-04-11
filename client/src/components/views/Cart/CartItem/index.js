@@ -13,7 +13,7 @@ function CartItem({item, cartIndex}) {
       {item.productName && (
         <ProductItem
           name={name}
-          productRef={{coupon: false, cartIndex: cartIndex, couponIndex: -1}}
+          productRef={{coupon: false, cartIndex: cartIndex, couponSlotIndex: -1}}
           fields={item.fields ? item.fields : item.quantity}
         />
       )}

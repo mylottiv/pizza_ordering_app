@@ -10,11 +10,13 @@ function ProductItem({name, productRef, fields}) {
 
   console.log("productName", name);
 
-  const {coupon, cartIndex, couponIndex} = productRef;
+  const {coupon, cartIndex, couponSlotIndex} = productRef;
 
   const removeItemAction = coupon
-    ? allActions.cart.removeItemFromCoupon({cartIndex, couponIndex})
+    ? allActions.cart.removeItemFromCoupon({cartIndex, couponSlotIndex})
     : allActions.cart.removeItemFromCart(cartIndex);
+
+  console.log("coupon", coupon, removeItemAction);
 
   const removeHandler = () => dispatch(removeItemAction);
 
