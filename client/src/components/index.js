@@ -8,6 +8,7 @@ export {default as CategoryLayout} from "./layouts/Category";
 export {ProductItemCartLayout, CouponItemCartLayout} from "./layouts/CartItem";
 export {default as OrderModalLayout} from "./layouts/OrderModal";
 export {default as MainLayout} from "./layouts/Main";
+export {default as CartButtonLayout} from "./layouts/CartButton";
 export {default as ViewRouter} from "./views";
 export {default as CartButton} from "./shared/CartButton";
 export {default as Category} from "./shared/Category";
