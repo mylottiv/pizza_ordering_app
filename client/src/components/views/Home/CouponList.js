@@ -1,11 +1,11 @@
 import React from "react";
 import {CategoryLayout} from "../..";
-import StoreItemCard from "../../shared/StoreItemCard";
+import StoreItem from "../../shared/StoreItem";
 
 function CouponList({list}) {
   // Populates with Product Cards
   const renderContent = list.map((coupon, index) => (
-    <StoreItemCard
+    <StoreItem
       key={index}
       couponRef={{coupon: true, couponSlotIndex: -1}}
       name={coupon.couponName}
