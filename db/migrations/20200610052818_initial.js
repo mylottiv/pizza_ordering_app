@@ -50,7 +50,7 @@ exports.up = async (knex) => {
             table.increments().notNullable();
             table.string('name', 254).notNullable();
             table.boolean('coupon').notNullable();
-            createReference(table, tableNames.cart);
+            createReference(table, tableNames.user);
             createReference(table, tableNames.coupon, false);
             defaultColumns(table);
         })

@@ -32,8 +32,8 @@ exports.seed = async (knex) => {
   console.log('SubCategory Created', testSubCategory);
   const [testProduct] = await knex(tableNames.product).insert({name: 'BYOP Base', subcategory_id: 1}).returning('*');
   console.log('Product Created', testProduct);
-  const [testCartItemC] = await knex(tableNames.cartItem).insert({name: 'test_item_1', coupon: true, cart_id: 1, coupon_id: 1}).returning('*');
+  const [testCartItemC] = await knex(tableNames.cartItem).insert({name: 'test_item_1', coupon: true, user_id: 1, coupon_id: 1}).returning('*');
   console.log('Cart Item C Created', testCartItemC);
-  const [testCartItemP] = await knex(tableNames.cartItem).insert({name: 'test_item_1', coupon: false, cart_id: 1, coupon_id: null}).returning('*');
+  const [testCartItemP] = await knex(tableNames.cartItem).insert({name: 'test_item_1', coupon: false, user_id: 1, coupon_id: null}).returning('*');
   console.log('Cart Item P Created', testCartItemP);
 };
