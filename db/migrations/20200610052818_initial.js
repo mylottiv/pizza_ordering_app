@@ -33,6 +33,7 @@ function createUser(knex) {
         table.string('name').notNullable();
         table.string('password', 500).notNullable();
         table.datetime('last_login');
+        defaultColumns(table);
     })
 }
 

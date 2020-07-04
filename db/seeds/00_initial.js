@@ -22,4 +22,6 @@ exports.seed = async (knex) => {
 
   const [createdUser] = await knex(tableNames.user).insert(user).returning('*');
   console.log('User Created:', createdUser);
+  const [createdMenu] = await knex(tableNames.menu).insert({name: 'Normal Menu'}).returning('*');
+  console.log('Menu Created', createdMenu);
 };
