@@ -7,7 +7,7 @@ function defaultColumns(table) {
     table.datetime('deleted_at');
 }
 
-function references(table, tableName) {
+function createReferences(table, tableName) {
     table
         .integer(`${tableName}_id`)
         .unsigned()
@@ -20,7 +20,7 @@ function createNameTable(knex, tableName, foreignKeys) {
     return knex.schema.createTable(tableName, (table) => {
         table.increments().notNullable();
         table.string('name').notNullable();
-        (foreignKeys) && foreignKeys.forEach((table) => references('id').inTable(table));
+        (foreignKeys) && foreignKeys.forEach((foreign_key) => createReferences(table, foreign_key));
         defaultColumns(table);
     })
 }
