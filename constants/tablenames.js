@@ -3,7 +3,7 @@ module.exports = {
     user: "test_user",
     category: "category",
     subcategory: "subcategory",
-    cart: "cart",
+    cartItem: "cart_item",
     coupon: "coupon",
     product: "product"
 }

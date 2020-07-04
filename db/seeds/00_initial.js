@@ -24,4 +24,16 @@ exports.seed = async (knex) => {
   console.log('User Created:', createdUser);
   const [createdMenu] = await knex(tableNames.menu).insert({name: 'Normal Menu'}).returning('*');
   console.log('Menu Created', createdMenu);
+  const [testCoupon] = await knex(tableNames.coupon).insert({name: 'BOGO', menu_id: 1}).returning('*');
+  console.log('Coupon Created', testCoupon);
+  const [testCategory] = await knex(tableNames.category).insert({name: 'Pizza', menu_id: 1}).returning('*');
+  console.log('Category Created', testCategory);
+  const [testSubCategory] = await knex(tableNames.subcategory).insert({name: 'BYOP', category_id: 1}).returning('*');
+  console.log('SubCategory Created', testSubCategory);
+  const [testProduct] = await knex(tableNames.product).insert({name: 'BYOP Base', subcategory_id: 1}).returning('*');
+  console.log('Product Created', testProduct);
+  const [testCartItemC] = await knex(tableNames.cartItem).insert({name: 'test_item_1', coupon: true, cart_id: 1, coupon_id: 1}).returning('*');
+  console.log('Cart Item C Created', testCartItemC);
+  const [testCartItemP] = await knex(tableNames.cartItem).insert({name: 'test_item_1', coupon: false, cart_id: 1, coupon_id: null}).returning('*');
+  console.log('Cart Item P Created', testCartItemP);
 };

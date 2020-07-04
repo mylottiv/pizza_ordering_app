@@ -7,20 +7,21 @@ function defaultColumns(table) {
     table.datetime('deleted_at');
 }
 
-function createReferences(table, tableName) {
-    table
+function createReference(table, tableName, notNullable = true) {
+    const reference = table
         .integer(`${tableName}_id`)
         .unsigned()
         .references('id')
         .inTable(tableName)
         .onDelete('CASCADE');
+    if (notNullable) reference.notNullable();
 }
 
 function createNameTable(knex, tableName, foreignKeys) {
     return knex.schema.createTable(tableName, (table) => {
         table.increments().notNullable();
         table.string('name').notNullable();
-        (foreignKeys) && foreignKeys.forEach((foreign_key) => createReferences(table, foreign_key));
+        if (foreignKeys) foreignKeys.forEach((foreign_key) => createReference(table, foreign_key));
         defaultColumns(table);
     })
 }
@@ -40,21 +41,28 @@ function createUser(knex) {
 exports.up = async (knex) => {
     await Promise.all([
         createUser(knex),
-        createNameTable(knex, tableNames.cart, [tableNames.user]),
         createNameTable(knex, tableNames.menu),
         createNameTable(knex, tableNames.coupon, [tableNames.menu]),
         createNameTable(knex, tableNames.category, [tableNames.menu]),
         createNameTable(knex, tableNames.subcategory, [tableNames.category]),
         createNameTable(knex, tableNames.product, [tableNames.subcategory]),
+        knex.schema.createTable(tableNames.cartItem, (table) => {
+            table.increments().notNullable();
+            table.string('name', 254).notNullable();
+            table.boolean('coupon').notNullable();
+            createReference(table, tableNames.cart);
+            createReference(table, tableNames.coupon, false);
+            defaultColumns(table);
+        })
     ]);
 };
 
 exports.down = async (knex) => {
-    await knex.schema.dropTable(tableNames.product)
-    await knex.schema.dropTable(tableNames.subcategory)
-    await knex.schema.dropTable(tableNames.category)
-    await knex.schema.dropTable(tableNames.coupon)
-    await knex.schema.dropTable(tableNames.menu)
-    await knex.schema.dropTable(tableNames.cart)
-    await knex.schema.dropTable(tableNames.user)
+    await knex.schema.dropTable(tableNames.product);
+    await knex.schema.dropTable(tableNames.subcategory);
+    await knex.schema.dropTable(tableNames.category);
+    await knex.schema.dropTable(tableNames.cartItem);
+    await knex.schema.dropTable(tableNames.coupon);
+    await knex.schema.dropTable(tableNames.menu);
+    await knex.schema.dropTable(tableNames.user);
 };

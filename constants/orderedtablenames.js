@@ -9,5 +9,5 @@ module.exports = [
     tableNames.product,
     // User Tree
     tableNames.user,
-    tableNames.cart
+    tableNames.cartItem
 ]
