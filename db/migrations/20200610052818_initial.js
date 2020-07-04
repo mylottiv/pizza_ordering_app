@@ -26,6 +26,27 @@ function createNameTable(knex, tableName, foreignKeys) {
     })
 }
 
+function createBoolTable(knex, tableName, boolName, foreignKeys) {
+    return knex.schema.createTable(tableName, (table) => {
+        table.increments().notNullable();
+        table.string('name', 254).notNullable();
+        table.boolean(boolName).notNullable();
+        if (foreignKeys) foreignKeys.forEach((foreign_key) => createReference(table, foreign_key));
+        defaultColumns(table);
+    })
+}
+
+function createCartItem(knex) {
+    return knex.schema.createTable(tableNames.cartItem, (table) => {
+        table.increments().notNullable();
+        table.string('name', 254).notNullable();
+        table.boolean('coupon').notNullable();
+        createReference(table, tableNames.coupon, false);
+        createReference(table, tableNames.user);
+        defaultColumns(table);
+    })
+}
+
 function createUser(knex) {
     return knex.schema.createTable(tableNames.user, (table) => {
         table.increments().notNullable();
@@ -38,28 +59,40 @@ function createUser(knex) {
     })
 }
 
+function createCoupon(knex) {
+    return knex.schema.createTable(tableNames.coupon, (table) => {
+        table.increments().notNullable();
+        table.string('name', 254).notNullable();
+        table.string('description');
+        table.boolean('fixed_size').notNullable();
+        createReference(table, tableNames.menu);
+        defaultColumns(table);
+    })
+};
+
 exports.up = async (knex) => {
     await Promise.all([
         createUser(knex),
         createNameTable(knex, tableNames.menu),
-        createNameTable(knex, tableNames.coupon, [tableNames.menu]),
+        createCoupon(knex),
+        createCartItem(knex),
         createNameTable(knex, tableNames.category, [tableNames.menu]),
         createNameTable(knex, tableNames.subcategory, [tableNames.category]),
         createNameTable(knex, tableNames.product, [tableNames.subcategory]),
-        knex.schema.createTable(tableNames.cartItem, (table) => {
-            table.increments().notNullable();
-            table.string('name', 254).notNullable();
-            table.boolean('coupon').notNullable();
-            createReference(table, tableNames.user);
-            createReference(table, tableNames.coupon, false);
-            defaultColumns(table);
-        })
+        createNameTable(knex, tableNames.eligibleItem, [tableNames.coupon, tableNames.product]),
+        createNameTable(knex, tableNames.choice, [tableNames.category]),
+        createBoolTable(knex, tableNames.option, 'selected', [tableNames.choice]),
+        createNameTable(knex, tableNames.ingredient, [tableNames.subcategory])
     ]);
 };
 
 exports.down = async (knex) => {
+    await knex.schema.dropTable(tableNames.eligibleItem);
     await knex.schema.dropTable(tableNames.product);
+    await knex.schema.dropTable(tableNames.ingredient);
     await knex.schema.dropTable(tableNames.subcategory);
+    await knex.schema.dropTable(tableNames.option);
+    await knex.schema.dropTable(tableNames.choice);
     await knex.schema.dropTable(tableNames.category);
     await knex.schema.dropTable(tableNames.cartItem);
     await knex.schema.dropTable(tableNames.coupon);
