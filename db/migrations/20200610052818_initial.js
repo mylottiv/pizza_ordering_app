@@ -20,7 +20,7 @@ function createNameTable(knex, tableName, foreignKeys) {
     return knex.schema.createTable(tableName, (table) => {
         table.increments().notNullable();
         table.string('name').notNullable();
-        (foreignKeys) && foreignKeys.forEach((key) => references(table, key));
+        (foreignKeys) && foreignKeys.forEach((table) => references('id').inTable(table));
         defaultColumns(table);
     })
 }
