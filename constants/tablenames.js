@@ -5,5 +5,9 @@ module.exports = {
     subcategory: "subcategory",
     cartItem: "cart_item",
     coupon: "coupon",
-    product: "product"
+    product: "product",
+    eligibleItem: "eligible_item",
+    choice: "choice",
+    ingredient: "ingredient",
+    option: "option"
 }
