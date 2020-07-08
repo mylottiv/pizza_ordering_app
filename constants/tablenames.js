@@ -8,6 +8,9 @@ module.exports = {
     product: "product",
     eligibleItem: "eligible_item",
     choice: "choice",
+    option: "option",
+    topping: "topping",
     ingredient: "ingredient",
-    option: "option"
+    default_ingredients: "default_ingredients",
+    default_options: "default_options"
 }

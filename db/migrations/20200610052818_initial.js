@@ -81,15 +81,21 @@ exports.up = async (knex) => {
         createNameTable(knex, tableNames.product, [tableNames.subcategory]),
         createNameTable(knex, tableNames.eligibleItem, [tableNames.coupon, tableNames.product]),
         createNameTable(knex, tableNames.choice, [tableNames.category]),
-        createBoolTable(knex, tableNames.option, 'selected', [tableNames.choice]),
-        createNameTable(knex, tableNames.ingredient, [tableNames.subcategory])
+        createNameTable(knex, tableNames.option, [tableNames.choice]),
+        createNameTable(knex, tableNames.topping, [tableNames.subcategory]),
+        createNameTable(knex, tableNames.ingredient, [tableNames.topping]),
+        createNameTable(knex, tableNames.default_options, [tableNames.product, tableNames.option]),
+        createBoolTable(knex, tableNames.default_ingredients, 'selected', [tableNames.product, tableNames.ingredient])
     ]);
 };
 
 exports.down = async (knex) => {
     await knex.schema.dropTable(tableNames.eligibleItem);
+    await knex.schema.dropTable(tableNames.default_options);
+    await knex.schema.dropTable(tableNames.default_ingredients);
     await knex.schema.dropTable(tableNames.product);
     await knex.schema.dropTable(tableNames.ingredient);
+    await knex.schema.dropTable(tableNames.topping);
     await knex.schema.dropTable(tableNames.subcategory);
     await knex.schema.dropTable(tableNames.option);
     await knex.schema.dropTable(tableNames.choice);

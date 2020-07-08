@@ -8,6 +8,7 @@ module.exports = [
     tableNames.choice,
     tableNames.option,
     tableNames.subcategory,
+    tableNames.topping,
     tableNames.ingredient,
     tableNames.product,
     tableNames.eligibleItem,
