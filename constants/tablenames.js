@@ -11,8 +11,11 @@ module.exports = {
     option: "option",
     topping: "topping",
     ingredient: "ingredient",
+    fields: "fields",
     choiceSet: "choice_set",
+    optionSet: "option_set",
     toppingSet: "topping_set",
+    ingredientSet: "ingredient_set",
     default_ingredients: "default_ingredients",
     default_options: "default_options"
 }
