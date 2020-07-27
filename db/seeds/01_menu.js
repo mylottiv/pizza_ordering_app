@@ -11,17 +11,20 @@ exports.seed = async (knex) => {
     const [pizzaFields] = await knex(tableNames.fields).insert({name: 'Pizza Fields'}).returning('*');
     console.log('Field Set Created', pizzaFields);
 
-    const [appetizerFields] = await knex(tableNames.fields).insert({name: 'Appetizer Fields'}).returning('*');
-    console.log('Field Set Created', appetizerFields);
+    const [pizzaAppetizerFields] = await knex(tableNames.fields).insert({name: 'Pizza Appetizer Fields'}).returning('*');
+    console.log('Field Set Created', pizzaAppetizerFields);
+
+    const [nonPizzaAppetizerFields] = await knex(tableNames.fields).insert({name: 'Non-Pizza Appetizer Fields'}).returning('*');
+    console.log('Field Set Created', nonPizzaAppetizerFields);
 
     const [sideSauceFields] = await knex(tableNames.fields).insert({name: 'Side Sauce Fields'}).returning('*');
     console.log('Field Set Created', sideSauceFields);
 
-    const [vegetarianSaladFields] = await knex(tableNames.fields).insert({name: 'Vegetarian Salad Fields'}).returning('*');
-    console.log('Field Set Created', vegetarianSaladFields);
+    const [saladFields] = await knex(tableNames.fields).insert({name: 'Salad Fields'}).returning('*');
+    console.log('Field Set Created', saladFields);
 
-    const [veganSaladFields] = await knex(tableNames.fields).insert({name: 'Vegan Salad Fields'}).returning('*');
-    console.log('Field Set Created', veganSaladFields);
+    // const [veganSaladFields] = await knex(tableNames.fields).insert({name: 'Vegan Salad Fields'}).returning('*');
+    // console.log('Field Set Created', veganSaladFields);
 
     const [premadeDessertFields] = await knex(tableNames.fields).insert({name: 'Premade Dessert Fields'}).returning('*');
     console.log('Field Set Created', premadeDessertFields);

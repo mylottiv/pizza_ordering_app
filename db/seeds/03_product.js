@@ -22,17 +22,17 @@ exports.seed = async (knex) => {
 
     const [cheeseSticksProduct] = await knex(tableNames.product).insert({name: 'Cheese Sticks', [tableNameReferences.subcategory]: 3, [tableNameReferences.fields]: 2}).returning('*');
     console.log('Product Created', cheeseSticksProduct);
-    const [mozzarellaSticksProduct] = await knex(tableNames.product).insert({name: 'Mozzarella Sticks', [tableNameReferences.subcategory]: 3, [tableNameReferences.fields]: 2}).returning('*');
+    const [mozzarellaSticksProduct] = await knex(tableNames.product).insert({name: 'Mozzarella Sticks', [tableNameReferences.subcategory]: 3, [tableNameReferences.fields]: 3}).returning('*');
     console.log('Product Created', mozzarellaSticksProduct);
 
-    const [marinaraProduct] = await knex(tableNames.product).insert({name: 'Side of Marinara', [tableNameReferences.subcategory]: 4, [tableNameReferences.fields]: 3}).returning('*');
+    const [marinaraProduct] = await knex(tableNames.product).insert({name: 'Side of Marinara', [tableNameReferences.subcategory]: 4, [tableNameReferences.fields]: 4}).returning('*');
     console.log('Product Created', marinaraProduct);
-    const [ranchProduct] = await knex(tableNames.product).insert({name: 'Side of Ranch', [tableNameReferences.subcategory]: 4, [tableNameReferences.fields]: 3}).returning('*');
+    const [ranchProduct] = await knex(tableNames.product).insert({name: 'Side of Ranch', [tableNameReferences.subcategory]: 4, [tableNameReferences.fields]: 4}).returning('*');
     console.log('Product Created', ranchProduct);
 
-    const [caesarProduct] = await knex(tableNames.product).insert({name: 'Caesar Salad', [tableNameReferences.subcategory]: 5, [tableNameReferences.fields]: 4}).returning('*');
+    const [caesarProduct] = await knex(tableNames.product).insert({name: 'Caesar Salad', [tableNameReferences.subcategory]: 5, [tableNameReferences.fields]: 5}).returning('*');
     console.log('Product Created', caesarProduct);
-    const [greekProduct] = await knex(tableNames.product).insert({name: 'Greek Salad', [tableNameReferences.subcategory]: 5, [tableNameReferences.fields]: 4}).returning('*');
+    const [greekProduct] = await knex(tableNames.product).insert({name: 'Greek Salad', [tableNameReferences.subcategory]: 5, [tableNameReferences.fields]: 5}).returning('*');
     console.log('Product Created', greekProduct);
 
     const [gardenProduct] = await knex(tableNames.product).insert({name: 'Garden Salad', [tableNameReferences.subcategory]: 6, [tableNameReferences.fields]: 5}).returning('*');
