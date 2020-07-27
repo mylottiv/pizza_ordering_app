@@ -21,20 +21,30 @@ function createNameTable(knex, tableName, foreignKeys) {
     return knex.schema.createTable(tableName, (table) => {
         table.increments().notNullable();
         table.string('name').notNullable();
-        if (foreignKeys) foreignKeys.forEach((foreign_key) => createReference(table, foreign_key, false));
-        defaultColumns(table);
-    })
-}
-
-function createBoolTable(knex, tableName, boolName, foreignKeys) {
-    return knex.schema.createTable(tableName, (table) => {
-        table.increments().notNullable();
-        table.string('name', 254).notNullable();
-        table.boolean(boolName).notNullable();
         if (foreignKeys) foreignKeys.forEach((foreign_key) => createReference(table, foreign_key));
         defaultColumns(table);
     })
 }
+
+function createProductTable(knex, tableName, foreignKeys) {
+    return knex.schema.createTable(tableName, (table) => {
+        table.increments().notNullable();
+        table.string('name').notNullable();
+        table.jsonb('default_fields');
+        if (foreignKeys) foreignKeys.forEach((foreign_key) => createReference(table, foreign_key));
+        defaultColumns(table);
+    })
+}
+
+// function createBoolTable(knex, tableName, boolName, foreignKeys) {
+//     return knex.schema.createTable(tableName, (table) => {
+//         table.increments().notNullable();
+//         table.string('name', 254).notNullable();
+//         table.boolean(boolName).notNullable();
+//         if (foreignKeys) foreignKeys.forEach((foreign_key) => createReference(table, foreign_key));
+//         defaultColumns(table);
+//     })
+// }
 
 function createCartItem(knex) {
     return knex.schema.createTable(tableNames.cartItem, (table) => {
@@ -78,7 +88,7 @@ exports.up = async (knex) => {
         createCartItem(knex),
         createNameTable(knex, tableNames.category, [tableNames.menu]),
         createNameTable(knex, tableNames.subcategory, [tableNames.category]),
-        createNameTable(knex, tableNames.product, [tableNames.subcategory, tableNames.fields]),
+        createProductTable(knex, tableNames.product, [tableNames.subcategory, tableNames.fields]),
         createNameTable(knex, tableNames.eligibleItem, [tableNames.coupon, tableNames.product]),
         createNameTable(knex, tableNames.fields),
         createNameTable(knex, tableNames.choiceSet, [tableNames.fields, tableNames.choice]),
