@@ -1,4 +1,5 @@
 const BaseModel = require('./BaseModel');
+const tableNames = require('../constants/tablenames');
 
 class SubCategory extends BaseModel {
     static tableName = 'subcategory';
@@ -13,28 +14,28 @@ class SubCategory extends BaseModel {
                 relation: BaseModel.BelongsToOneRelation,
                 modelClass: Category,
                 join: {
-                    from: 'subcategory.category_id',
-                    to: 'category.id'
+                    from: `${tableNames.subcategory}.category_id`,
+                    to: `${tableNames.category}.id`
                 }
             },
             products: {
                 relation: BaseModel.HasManyRelation,
                 modelClass: Product,
                 join: {
-                    from: 'subcategory.id',
-                    to: 'product.subcategory_id'
+                    from: `${tableNames.subcategory}.id`,
+                    to: `${tableNames.product}.subcategory_id`
                 }
             },
             associatedFields: {
                 relation: BaseModel.HasOneThroughRelation,
                 modelClass: Fields,
                 join: {
-                    from: 'subcategory.id',
+                    from: `${tableNames.subcategory}.id`,
                     through: {
-                        from: 'product.subcategory_id',
-                        to: 'product.fields_id'
+                        from: `${tableNames.product}.subcategory_id`,
+                        to: `${tableNames.product}.fields_id`
                     },
-                    to: 'fields.id'
+                    to: `${tableNames.fields}.id`
                 }
             }
         }

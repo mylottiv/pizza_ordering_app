@@ -1,4 +1,5 @@
 const BaseModel = require('./BaseModel');
+const tableNames = require('../constants/tablenames');
 
 class Ingredient extends BaseModel {
     static tableName = 'ingredient';
@@ -8,15 +9,15 @@ class Ingredient extends BaseModel {
 
         return {
             usedInToppings: {
-                relation: BaseModel.HasOneThroughRelation,
+                relation: BaseModel.ManyToManyRelation,
                 modelClass: Topping,
                 join: {
-                    from: 'ingredient.id',
+                    from: `${tableNames.ingredient}.id`,
                     through: {
-                        from: 'option_set.ingredient_id',
-                        to: 'option_set.topping_id'
+                        from: `${tableNames.optionSet}.ingredient_id`,
+                        to: `${tableNames.optionSet}.topping_id`
                     },
-                    to: 'topping.id'
+                    to: `${tableNames.topping}.id`
                 }
             }
         }

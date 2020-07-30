@@ -1,4 +1,5 @@
 const BaseModel = require('./BaseModel');
+const tableNames = require('../constants/tablenames');
 
 class Product extends BaseModel {
     
@@ -16,46 +17,55 @@ class Product extends BaseModel {
                 relation: BaseModel.BelongsToOneRelation,
                 modelClass: SubCategory,
                 join: {
-                    from: 'product.subcategory_id',
-                    to: 'subcategory.id'
+                    from: `${tableNames.product}.subcategory_id`,
+                    to: `${tableNames.subcategory}.id`
                 }
             },
             fields: {
                 relation: BaseModel.HasOneRelation,
                 modelClass: Fields,
                 join: {
-                    from: 'product.fields_id',
-                    to: 'fields.id'
+                    from: `${tableNames.product}.fields_id`,
+                    to: `${tableNames.fields}.id`
                 }
             },
             selectedChoices: {
                 relation: BaseModel.ManyToManyRelation,
                 modelClass: Choice,
                 join: {
-                    from: 'product.fields_id',
+                    from: `${tableNames.product}.fields_id`,
                     through: {
-                        from: 'choice_set.fields_id',
-                        to: 'choice_set.choice_id'
+                        from: `${tableNames.choiceSet}.fields_id`,
+                        to: `${tableNames.choiceSet}.choice_id`
                     },
-                    to: 'choice.id'
+                    to: `${tableNames.choice}.id`
                 }
             },
             selectedToppings: {
                 relation: BaseModel.ManyToManyRelation,
                 modelClass: Topping,
                 join: {
-                    from: 'product.fields_id',
+                    from: `${tableNames.product}.fields_id`,
                     through: {
-                        from: 'topping_set.fields_id',
-                        to: 'topping_set.topping_id'
+                        from: `${tableNames.toppingSet}.fields_id`,
+                        to: `${tableNames.toppingSet}.topping_id`
                     },
-                    to: 'topping.id'
+                    to: `${tableNames.topping}.id`
                 }
             }
         }
     };
 
-    static modifiers = this.baseModifiers(Product.ref);
+    static modifiers = this.baseModifiers(Product.ref, (ref) => {
+        return {
+            productListSelects(builder) {
+                return builder.select(ref('name'), ref('description'))
+            },
+            productWizardSelects(builder) {
+                return builder.select(ref('name'), ref('default_fields'))
+            }
+        };
+    });
 }
 
 module.exports = Product;

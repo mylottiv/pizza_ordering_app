@@ -1,4 +1,5 @@
 const BaseModel = require('./BaseModel');
+const tableNames = require('../constants/tablenames');
 
 class Choice extends BaseModel {
     static tableName = 'choice';
@@ -10,27 +11,27 @@ class Choice extends BaseModel {
 
         return {
             usedInFields: {
-                relation: BaseModel.HasOneThroughRelation,
+                relation: BaseModel.ManyToManyRelation,
                 modelClass: Fields,
                 join: {
-                    from: 'choice.id',
+                    from: `${tableNames.choice}.id`,
                     through: {
-                        from: 'choice_set.choice_id',
-                        to: 'choice_set.fields_id'
+                        from: `${tableNames.choiceSet}.choice_id`,
+                        to: `${tableNames.choiceSet}.fields_id`
                     },
-                    to: 'fields.id'
+                    to: `${tableNames.fields}.id`
                 }
             },
             selectedOptions: {
-                relation: BaseModel.HasOneThroughRelation,
+                relation: BaseModel.ManyToManyRelation,
                 modelClass: Option,
                 join: {
-                    from: 'choice.id',
+                    from: `${tableNames.choice}.id`,
                     through: {
-                        from: 'option_set.choice_id',
-                        to: 'option_set.option_id'
+                        from: `${tableNames.optionSet}.choice_id`,
+                        to: `${tableNames.optionSet}.option_id`
                     },
-                    to: 'option.id'
+                    to: `${tableNames.option}.id`
                 }
             }
         }

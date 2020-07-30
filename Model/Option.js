@@ -1,4 +1,5 @@
 const BaseModel = require('./BaseModel');
+const tableNames = require('../constants/tablenames');
 
 class Option extends BaseModel {
 
@@ -9,15 +10,15 @@ class Option extends BaseModel {
 
         return {
             usedInChoices: {
-                relation: BaseModel.HasOneThroughRelation,
+                relation: BaseModel.ManyToManyRelation,
                 modelClass: Choice,
                 join: {
-                    from: 'option.id',
+                    from: `${tableNames.option}.id`,
                     through: {
-                        from: 'option_set.option_id',
-                        to: 'option_set.choice_id'
+                        from: `${tableNames.optionSet}.option_id`,
+                        to: `${tableNames.optionSet}.choice_id`
                     },
-                    to: 'choice.id'
+                    to: `${tableNames.choice}.id`
                 }
             }
         }

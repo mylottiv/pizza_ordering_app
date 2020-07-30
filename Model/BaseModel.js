@@ -5,16 +5,16 @@ const { Model } = require('objection');
 const knexConnect = Knex(config['development']);
 
 class BaseModel extends Model {
-    static baseModifiers(scopeRef = BaseModel.ref, localModifiers = {}) {
+    static baseModifiers(scopeRef = BaseModel.ref, localModifiers = (ref) => {return {}}) {
         const modifiers = {
             selectIdAndName(builder) {
                 builder.select(scopeRef('id'), scopeRef('name'))
             }
         }
-        return {...localModifiers, ...modifiers};
+        return Object.assign(modifiers, localModifiers(scopeRef));
     }
 
-    static modifiers = this.baseModifiers(BaseModel.ref)
+    static modifiers = this.baseModifiers()
 };
 
 BaseModel.knex(knexConnect);
