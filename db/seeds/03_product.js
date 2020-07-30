@@ -206,41 +206,41 @@ exports.seed = async (knex) => {
         [tableNameReferences.menu]: 1
     };
 
-    const [ByopProduct] = await knex(tableNames.product).insert({name: 'Build Your Own Pizza', [tableNameReferences.subcategory]: 1, [tableNameReferences.fields]: 1, default_fields: JSON.stringify(BYOP_default)}).returning('*');
+    const [ByopProduct] = await knex(tableNames.product).insert({name: 'Build Your Own Pizza', description: 'Lorem Ipsum', [tableNameReferences.subcategory]: 1, [tableNameReferences.fields]: 1, default_fields: JSON.stringify(BYOP_default)}).returning('*');
     console.log('Product Created', ByopProduct);
-    const [HawaiianProduct] = await knex(tableNames.product).insert({name: 'Hawaiian', [tableNameReferences.subcategory]: 2, [tableNameReferences.fields]: 1, default_fields: JSON.stringify(Hawaiian_default)}).returning('*');
+    const [HawaiianProduct] = await knex(tableNames.product).insert({name: 'Hawaiian', description: 'Lorem Ipsum', [tableNameReferences.subcategory]: 2, [tableNameReferences.fields]: 1, default_fields: JSON.stringify(Hawaiian_default)}).returning('*');
     console.log('Product Created', HawaiianProduct);
-    const [WorksProduct] = await knex(tableNames.product).insert({name: 'The Works', [tableNameReferences.subcategory]: 2, [tableNameReferences.fields]: 1, default_fields: JSON.stringify(Works_default)}).returning('*');
+    const [WorksProduct] = await knex(tableNames.product).insert({name: 'The Works', description: 'Lorem Ipsum', [tableNameReferences.subcategory]: 2, [tableNameReferences.fields]: 1, default_fields: JSON.stringify(Works_default)}).returning('*');
     console.log('Product Created', WorksProduct);
 
-    const [cheeseSticksProduct] = await knex(tableNames.product).insert({name: 'Cheese Sticks', [tableNameReferences.subcategory]: 3, [tableNameReferences.fields]: 2, default_fields: JSON.stringify(cheeseSticks_default)}).returning('*');
+    const [cheeseSticksProduct] = await knex(tableNames.product).insert({name: 'Cheese Sticks', description: 'Lorem Ipsum', [tableNameReferences.subcategory]: 3, [tableNameReferences.fields]: 2, default_fields: JSON.stringify(cheeseSticks_default)}).returning('*');
     console.log('Product Created', cheeseSticksProduct);
-    const [mozzarellaSticksProduct] = await knex(tableNames.product).insert({name: 'Mozzarella Sticks', [tableNameReferences.subcategory]: 3, [tableNameReferences.fields]: 3, default_fields: JSON.stringify(mozzarellaSticks_default)}).returning('*');
+    const [mozzarellaSticksProduct] = await knex(tableNames.product).insert({name: 'Mozzarella Sticks', description: 'Lorem Ipsum', [tableNameReferences.subcategory]: 3, [tableNameReferences.fields]: 3, default_fields: JSON.stringify(mozzarellaSticks_default)}).returning('*');
     console.log('Product Created', mozzarellaSticksProduct);
 
-    const [marinaraProduct] = await knex(tableNames.product).insert({name: 'Side of Marinara', [tableNameReferences.subcategory]: 4, [tableNameReferences.fields]: 4, default_fields: JSON.stringify(sauce_default)}).returning('*');
+    const [marinaraProduct] = await knex(tableNames.product).insert({name: 'Side of Marinara', description: 'Lorem Ipsum', [tableNameReferences.subcategory]: 4, [tableNameReferences.fields]: 4, default_fields: JSON.stringify(sauce_default)}).returning('*');
     console.log('Product Created', marinaraProduct);
-    const [ranchProduct] = await knex(tableNames.product).insert({name: 'Side of Ranch', [tableNameReferences.subcategory]: 4, [tableNameReferences.fields]: 4, default_fields: JSON.stringify(sauce_default)}).returning('*');
+    const [ranchProduct] = await knex(tableNames.product).insert({name: 'Side of Ranch', description: 'Lorem Ipsum', [tableNameReferences.subcategory]: 4, [tableNameReferences.fields]: 4, default_fields: JSON.stringify(sauce_default)}).returning('*');
     console.log('Product Created', ranchProduct);
 
-    const [caesarProduct] = await knex(tableNames.product).insert({name: 'Caesar Salad', [tableNameReferences.subcategory]: 5, [tableNameReferences.fields]: 5, default_fields: JSON.stringify(caesar_default)}).returning('*');
+    const [caesarProduct] = await knex(tableNames.product).insert({name: 'Caesar Salad', description: 'Lorem Ipsum', [tableNameReferences.subcategory]: 5, [tableNameReferences.fields]: 5, default_fields: JSON.stringify(caesar_default)}).returning('*');
     console.log('Product Created', caesarProduct);
-    const [greekProduct] = await knex(tableNames.product).insert({name: 'Greek Salad', [tableNameReferences.subcategory]: 5, [tableNameReferences.fields]: 5, default_fields: JSON.stringify(greek_default)}).returning('*');
+    const [greekProduct] = await knex(tableNames.product).insert({name: 'Greek Salad', description: 'Lorem Ipsum', [tableNameReferences.subcategory]: 5, [tableNameReferences.fields]: 5, default_fields: JSON.stringify(greek_default)}).returning('*');
     console.log('Product Created', greekProduct);
 
-    const [gardenProduct] = await knex(tableNames.product).insert({name: 'Garden Salad', [tableNameReferences.subcategory]: 6, [tableNameReferences.fields]: 5, default_fields: JSON.stringify(garden_default)}).returning('*');
+    const [gardenProduct] = await knex(tableNames.product).insert({name: 'Garden Salad', description: 'Lorem Ipsum', [tableNameReferences.subcategory]: 6, [tableNameReferences.fields]: 5, default_fields: JSON.stringify(garden_default)}).returning('*');
     console.log('Product Created', gardenProduct);
-    const [tabouliProduct] = await knex(tableNames.product).insert({name: 'Tabouli Salad', [tableNameReferences.subcategory]: 6, [tableNameReferences.fields]: 5, default_fields: JSON.stringify(tabouli_default)}).returning('*');
+    const [tabouliProduct] = await knex(tableNames.product).insert({name: 'Tabouli Salad', description: 'Lorem Ipsum', [tableNameReferences.subcategory]: 6, [tableNameReferences.fields]: 5, default_fields: JSON.stringify(tabouli_default)}).returning('*');
     console.log('Product Created', tabouliProduct);
 
-    const [cookiesProduct] = await knex(tableNames.product).insert({name: 'Cookies', [tableNameReferences.subcategory]: 7, [tableNameReferences.fields]: 6}).returning('*');
+    const [cookiesProduct] = await knex(tableNames.product).insert({name: 'Cookies', description: 'Lorem Ipsum', [tableNameReferences.subcategory]: 7, [tableNameReferences.fields]: 6}).returning('*');
     console.log('Product Created', cookiesProduct);
-    const [browniesProduct] = await knex(tableNames.product).insert({name: 'Brownies', [tableNameReferences.subcategory]: 7, [tableNameReferences.fields]: 6}).returning('*');
+    const [browniesProduct] = await knex(tableNames.product).insert({name: 'Brownies', description: 'Lorem Ipsum', [tableNameReferences.subcategory]: 7, [tableNameReferences.fields]: 6}).returning('*');
     console.log('Product Created', browniesProduct);
 
-    const [cinnastixProduct] = await knex(tableNames.product).insert({name: 'Cinnastix', [tableNameReferences.subcategory]: 8, [tableNameReferences.fields]: 7, default_fields: JSON.stringify(cinnaStix_default)}).returning('*');
+    const [cinnastixProduct] = await knex(tableNames.product).insert({name: 'Cinnastix', description: 'Lorem Ipsum', [tableNameReferences.subcategory]: 8, [tableNameReferences.fields]: 7, default_fields: JSON.stringify(cinnaStix_default)}).returning('*');
     console.log('Product Created', cinnastixProduct);
-    const [smoresProduct] = await knex(tableNames.product).insert({name: "S'Mores", [tableNameReferences.subcategory]: 8, [tableNameReferences.fields]: 7, default_fields: JSON.stringify(smores_default)}).returning('*');
+    const [smoresProduct] = await knex(tableNames.product).insert({name: "S'Mores", description: 'Lorem Ipsum', [tableNameReferences.subcategory]: 8, [tableNameReferences.fields]: 7, default_fields: JSON.stringify(smores_default)}).returning('*');
     console.log('Product Created', smoresProduct);
 
     const [testCoupon] = await knex(tableNames.coupon).insert(coupon).returning('*');

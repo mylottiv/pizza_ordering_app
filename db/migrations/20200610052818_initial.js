@@ -30,6 +30,7 @@ function createProductTable(knex, tableName, foreignKeys) {
     return knex.schema.createTable(tableName, (table) => {
         table.increments().notNullable();
         table.string('name').notNullable();
+        table.string('description');
         table.jsonb('default_fields');
         if (foreignKeys) foreignKeys.forEach((foreign_key) => createReference(table, foreign_key));
         defaultColumns(table);
