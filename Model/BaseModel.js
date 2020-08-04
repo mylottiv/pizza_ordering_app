@@ -7,6 +7,9 @@ const knexConnect = Knex(config['development']);
 class BaseModel extends Model {
     static baseModifiers(scopeRef = BaseModel.ref, localModifiers = (ref) => {return {}}) {
         const modifiers = {
+            selectName(builder) {
+                builder.select(scopeRef('name'))
+            },
             selectIdAndName(builder) {
                 builder.select(scopeRef('id'), scopeRef('name'))
             }
