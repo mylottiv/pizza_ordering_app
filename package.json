@@ -23,7 +23,9 @@
   },
   "homepage": "https://github.com/mylottiv/pizza_ordering_app#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
+    "helmet": "^4.0.0",
     "knex": "^0.20.15",
     "objection": "^2.2.1",
     "pg": "^8.3.0"
