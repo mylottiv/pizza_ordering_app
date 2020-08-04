@@ -1,6 +1,6 @@
 import React from "react";
 import {useSelector} from "react-redux";
-import {CategoryLayout} from "../../..";
+import {SubCategoryLayout} from "../../..";
 import StoreItem from "../../StoreItem";
 
 function CouponProductSlot({couponName, item, index}) {
@@ -30,9 +30,9 @@ function CouponProductSlot({couponName, item, index}) {
   });
 
   return (
-    <CategoryLayout name={`Item ${index + 1}`} modal={true}>
+    <SubCategoryLayout name={`Item ${index + 1}`} modal={true}>
       {eligibleProducts}
-    </CategoryLayout>
+    </SubCategoryLayout>
   );
 }
 

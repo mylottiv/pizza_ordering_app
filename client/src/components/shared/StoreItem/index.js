@@ -1,14 +1,13 @@
 import React from "react";
 import {StoreItemLayout} from "../..";
-import ClickHandler from "./ClickHandler";
+// import ClickHandler from "./ClickHandler";
 
-function StoreItem({couponRef, name, selectedItem}) {
+function StoreItem({name, imageUrl, description}) {
   return (
-    <StoreItemLayout>
-      {{
-        name: name,
-        onClick: ClickHandler(couponRef, name, selectedItem),
-      }}
+    <StoreItemLayout name={name} image={imageUrl} onClick={() => console.log("clicked")}>
+      {description !== ""
+        ? description
+        : "Nunc sed tortor sapien. In id lectus vel risus dignissim condimentum at ut sapien. Suspendisse consequat convallis dolor sit amet elementum."}
     </StoreItemLayout>
   );
 }
