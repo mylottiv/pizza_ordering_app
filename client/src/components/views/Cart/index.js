@@ -1,5 +1,5 @@
 import React from "react";
-import {Category, ContentLayout, MainLayout} from "../..";
+import {ContentList, ContentLayout, MainLayout} from "../..";
 import CartContents from "./CartContents";
 
 function Cart({content}) {
@@ -9,7 +9,7 @@ function Cart({content}) {
     <MainLayout>
       <ContentLayout name="My Cart">
         <CartContents cart={content} />
-        <Category content={{name: "CHECKOUT"}} />
+        <ContentList content={{name: "CHECKOUT"}} />
       </ContentLayout>
     </MainLayout>
   );

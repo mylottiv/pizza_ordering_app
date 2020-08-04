@@ -1,5 +1,5 @@
 import React from "react";
-import {CategoryLayout} from "../..";
+import {SubCategoryLayout} from "../..";
 import StoreItem from "../../shared/StoreItem";
 
 function CouponList({list}) {
@@ -13,7 +13,7 @@ function CouponList({list}) {
     />
   ));
 
-  return <CategoryLayout name={"Coupons"}>{renderContent}</CategoryLayout>;
+  return <SubCategoryLayout name={"Coupons"}>{renderContent}</SubCategoryLayout>;
 }
 
 export default CouponList;

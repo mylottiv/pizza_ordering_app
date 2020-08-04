@@ -3,7 +3,7 @@ import {useSelector} from "react-redux";
 import {Switch, Route, Redirect} from "react-router-dom";
 import Home from "./Home";
 import Cart from "./Cart";
-import Product from "./Product";
+import MenuCategory from "./Category";
 
 function ViewRouter(props) {
   const cartState = useSelector(state => state.cart);
@@ -22,12 +22,7 @@ function ViewRouter(props) {
         path="/myCart"
         render={props => <Cart content={cartState} {...props} />}
       />
-      <Route
-        path="/product/:type"
-        render={props => (
-          <Product content={storeData.menu[props.match.params.type]} {...props} />
-        )}
-      />
+      <Route path="/product/:type" render={props => <MenuCategory {...props} />} />
       <Route
         path="/:product"
         render={props => <Redirect to={`/product/${props.match.params.product}`} />}

@@ -1,5 +1,5 @@
 import React from "react";
-import {Category, ContentLayout, MainLayout} from "../..";
+import {ContentList, ContentLayout, MainLayout} from "../..";
 import CouponList from "./CouponList";
 
 function Home({coupons}) {
@@ -8,11 +8,11 @@ function Home({coupons}) {
     <MainLayout>
       <ContentLayout name="Home">
         <CouponList list={coupons} />
-        <Category content={{name: "HOME TEST"}} />
-        <Category content={{name: "HOME TEST"}} />
-        <Category content={{name: "HOME TEST"}} />
-        <Category content={{name: "HOME TEST"}} />
-        <Category content={{name: "HOME TEST"}} />
+        <ContentList content={{name: "HOME TEST"}} />
+        <ContentList content={{name: "HOME TEST"}} />
+        <ContentList content={{name: "HOME TEST"}} />
+        <ContentList content={{name: "HOME TEST"}} />
+        <ContentList content={{name: "HOME TEST"}} />
       </ContentLayout>
     </MainLayout>
   );

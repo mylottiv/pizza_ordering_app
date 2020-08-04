@@ -1,5 +1,5 @@
 import React from "react";
-import {CategoryLayout} from "../../";
+import {SubCategoryLayout} from "../../";
 import {default as CartItem} from "./CartItem";
 
 function CartContents({cart}) {
@@ -9,9 +9,9 @@ function CartContents({cart}) {
   ));
 
   return (
-    <CategoryLayout name="In Your Cart:">
+    <SubCategoryLayout name="In Your Cart:">
       <div className="flex flex-col mb-2">{renderContent}</div>
-    </CategoryLayout>
+    </SubCategoryLayout>
   );
 }
 
