@@ -14,8 +14,61 @@ app.use(cors());
 app.get('/api/menu/:category', (req, res) => {
   const capitalizedCategory = req.params.category.charAt(0).toUpperCase() + req.params.category.slice(1);
   console.log(capitalizedCategory);
-  Category.query().findOne('category.name', capitalizedCategory).modify('selectName').withGraphJoined('subcategories(selectName).products(productListSelects)')
+  Category.query().findOne('category.name', capitalizedCategory).modify('selectName')
+  .withGraphJoined('subcategories(selectName).products(productListSelects)')
   .then(test => res.json(test));
+});
+
+app.get('/api/product/:id', (req, res) => {
+
+  console.log('PRODUCT ID:', req.params.id);
+  Product.query().findById(req.params.id).modify('productWizardSelects')
+  .withGraphJoined('[selectedChoices(selectName).selectedOptions(selectName), selectedToppings(selectName).selectedIngredients(selectName)]')
+  .then(selectedProduct => {
+    let parsedProductFields = {name: selectedProduct.name, choices: [], toppings: []}
+    const defaultFields = selectedProduct.default_fields;
+    for (const choice of selectedProduct.selectedChoices) {
+      let choiceMatch;
+      if (choice.name.includes('Size')) {
+          choiceMatch = 'Size';
+      }
+      else if (choice.name.includes('Crust')) {
+        choiceMatch = 'Crust';
+      }
+      else if (choice.name.includes('Sauce')) {
+        choiceMatch = 'Sauce';
+      };
+      let parsedChoice = {name: choice.name, options: []}
+      for (const option of choice.selectedOptions) {
+        const selectedFlag = (defaultFields[choiceMatch] === option.name);
+        parsedChoice.options.push({name: option.name, selected: selectedFlag});
+      }
+      parsedProductFields.choices.push(parsedChoice)
+    };
+    for (const topping of selectedProduct.selectedToppings) {
+      let toppingMatch;
+      if (topping.name.includes('Greens')) {
+        toppingMatch = 'Greens';
+      }
+      else if (topping.name.includes('Cheese')) {
+        toppingMatch = 'Cheese';
+      }
+      else if (topping.name.includes('Meat')) {
+        toppingMatch = 'Meat';
+      }
+      else if (topping.name.includes('Veggies')) {
+        toppingMatch = 'Veggies';
+      };
+      let parsedTopping = {name: topping.name, ingredients: []}
+      for (const ingredient of topping.selectedIngredients) {
+        console.log(defaultFields[toppingMatch], defaultFields[toppingMatch][ingredient.name], ingredient.name);
+        const selectedFlag = defaultFields[toppingMatch][ingredient.name];
+        parsedTopping.ingredients.push({name: ingredient.name, selected: selectedFlag});
+      }
+      parsedProductFields.toppings.push(parsedTopping);
+    };
+    res.json(parsedProductFields);
+  });
 })
 
 app.listen(3020, () => {

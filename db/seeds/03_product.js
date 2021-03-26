@@ -206,7 +206,7 @@ exports.seed = async (knex) => {
         [tableNameReferences.menu]: 1
     };
 
-    const [ByopProduct] = await knex(tableNames.product).insert({name: 'Build Your Own Pizza', description: '', [tableNameReferences.subcategory]: 1, [tableNameReferences.fields]: 1, default_fields: JSON.stringify(BYOP_default)}).returning('*');
+    const [ByopProduct] = await knex(tableNames.product).insert({name: 'Build Your Own Pizza', description: 'Create the pizza of your dreams!', [tableNameReferences.subcategory]: 1, [tableNameReferences.fields]: 1, default_fields: JSON.stringify(BYOP_default)}).returning('*');
     console.log('Product Created', ByopProduct);
     const [HawaiianProduct] = await knex(tableNames.product).insert({name: 'Hawaiian', description: '', [tableNameReferences.subcategory]: 2, [tableNameReferences.fields]: 1, default_fields: JSON.stringify(Hawaiian_default)}).returning('*');
     console.log('Product Created', HawaiianProduct);

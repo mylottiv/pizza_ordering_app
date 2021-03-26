@@ -34,8 +34,8 @@ exports.seed = async (knex) => {
     console.log('Ingredient Created', pineappleIngredient);
     const [tomatoIngredient] = await knex(tableNames.ingredient).insert({name: 'Tomato'}).returning('*');
     console.log('Ingredient Created', tomatoIngredient);
-    const [carrotIngredient] = await knex(tableNames.ingredient).insert({name: 'Carrot'}).returning('*');
-    console.log('Ingredient Created', carrotIngredient);
+    const [CarrotsIngredient] = await knex(tableNames.ingredient).insert({name: 'Carrots'}).returning('*');
+    console.log('Ingredient Created', CarrotsIngredient);
     const [croutonIngredient] = await knex(tableNames.ingredient).insert({name: 'Crouton'}).returning('*');
     console.log('Ingredient Created', croutonIngredient);
 

@@ -59,7 +59,7 @@ class Product extends BaseModel {
     static modifiers = this.baseModifiers(Product.ref, (ref) => {
         return {
             productListSelects(builder) {
-                return builder.select(ref('name'), ref('description'))
+                return builder.select(ref('id'), ref('name'), ref('description'))
             },
             productWizardSelects(builder) {
                 return builder.select(ref('name'), ref('default_fields'))
