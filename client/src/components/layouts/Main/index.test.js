@@ -1,13 +1,13 @@
 import React from "react";
 import {render, screen} from "@testing-library/react";
-import SideBarLayout from "./";
+import MainLayout from "./";
 
 it("given test children elements, renders them", () => {
   render(
-    <SideBarLayout>
+    <MainLayout>
       <div>Child1</div>
       <div>Child2</div>
-    </SideBarLayout>
+    </MainLayout>
   );
   expect(screen.getByText("Child1")).toBeInTheDocument();
   expect(screen.getByText("Child2")).toBeInTheDocument();
