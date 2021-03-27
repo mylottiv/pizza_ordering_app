@@ -1,6 +1,6 @@
 import React from "react";
 
-function InfoCard({name, image = "", description = ""}) {
+function InfoCard({name = "", image = "", description = ""}) {
   const loremIpsum =
     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.";
   const defaultImage =
@@ -11,7 +11,7 @@ function InfoCard({name, image = "", description = ""}) {
       <img
         className="w-full h-48"
         src={image === "" ? defaultImage : image}
-        alt="Sunset in the mountains"
+        alt={image === "" ? "Default Product Image" : "Product Image"}
       ></img>
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">{name}</div>
