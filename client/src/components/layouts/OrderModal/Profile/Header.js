@@ -1,9 +1,10 @@
 import React from "react";
-import {useDispatch} from "react-redux";
-import {allActions} from "../../..";
+// import {useDispatch} from "react-redux";
+// import {allActions} from "../../..";
 
-function Header({name}) {
-  const dispatch = useDispatch();
+function Header({name, onClick}) {
+  // This needs to be moved out of the layout
+  // const dispatch = useDispatch();
 
   return (
     <div className="flex flex-row">
@@ -11,7 +12,8 @@ function Header({name}) {
         <h1 className="flex-1 text-2xl text-center font-bold">{name}</h1>
         <button
           className="bg-red-700 h-16 w-16 rounded-lg"
-          onClick={() => dispatch(allActions.modal.closeModal({}))}
+          // onClick={() => dispatch(allActions.modal.closeModal({}))}
+          onClick={onClick}
         >
           X
         </button>

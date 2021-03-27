@@ -6,7 +6,7 @@ function ProfileImage(props) {
       <img
         className=""
         src="https://i2.wp.com/lifemadesimplebakes.com/wp-content/uploads/2017/04/Garden-Veggie-Pizza-1.jpg"
-        alt="Sunset in the mountains"
+        alt="Default Profile Image"
       ></img>
     </div>
   );
