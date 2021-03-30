@@ -1,23 +1,21 @@
-import React from "react";
+import React, {useState} from "react";
 import {useFormContext} from "react-hook-form";
+import OptionRadioButtonLayout from "../../../layouts/OrderModal/ProductRadioOptions/OptionRadioButton";
 
 function OptionRadioButton({type, value, selected}) {
+  const [checked, setChecked] = useState(selected);
   const {register} = useFormContext();
 
   return (
-    <div className="flex flex-col ml-4">
-      <label className="inline-flex items-center">
-        <input
-          type="radio"
-          className="form-radio"
-          name={type}
-          value={value}
-          defaultChecked={selected && true}
-          ref={register({required: true})}
-        />
-        <span className="ml-2">{value}</span>
-      </label>
-    </div>
+    <>
+      <OptionRadioButtonLayout
+        type={type}
+        value={value}
+        checked={checked}
+        onChange={() => setChecked(!checked)}
+        refFunction={() => register({required: true})}
+      />
+    </>
   );
 }
 

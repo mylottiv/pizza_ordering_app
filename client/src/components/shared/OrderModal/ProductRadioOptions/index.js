@@ -1,5 +1,6 @@
 import React from "react";
 import OptionRadioButton from "./OptionRadioButton";
+import ProductRadioOptionsLayout from "../../../layouts/OrderModal/ProductRadioOptions";
 
 function ProductRadioOptions({type, options, register}) {
   const radioOptions = options.map(option => (
@@ -12,12 +13,7 @@ function ProductRadioOptions({type, options, register}) {
   ));
 
   return (
-    <div className="flex flex-row my-6">
-      <div className="flex-1 flex-col text-center">
-        <span className="text-gray-700">{type}</span>
-        <div className="flex flex-row mr-4 justify-center">.{radioOptions}</div>
-      </div>
-    </div>
+    <ProductRadioOptionsLayout type={type}>{radioOptions}</ProductRadioOptionsLayout>
   );
 }
 
