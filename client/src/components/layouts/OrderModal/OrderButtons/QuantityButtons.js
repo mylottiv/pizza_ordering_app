@@ -1,6 +1,6 @@
 import React from "react";
 
-function QuantityButtons({defaultQuantity, onClick, refFunction}) {
+function QuantityButtons({defaultQuantity, addHandler, subtractHandler, refFunction}) {
   return (
     <div className="flex-1 inline-flex items-center justify-center my-2">
       <input
@@ -13,14 +13,14 @@ function QuantityButtons({defaultQuantity, onClick, refFunction}) {
       <button
         type="button"
         className="bg-blue-500 rounded-full h-16 w-16 flex items-center justify-center ml-6"
-        onClick={onClick}
+        onClick={addHandler}
       >
         +
       </button>
       <button
         type="button"
         className="bg-blue-500 rounded-full h-16 w-16 flex items-center justify-center ml-6"
-        onClick={onClick}
+        onClick={subtractHandler}
       >
         -
       </button>

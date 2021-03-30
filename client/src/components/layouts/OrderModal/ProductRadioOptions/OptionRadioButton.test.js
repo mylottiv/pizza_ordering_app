@@ -2,7 +2,7 @@ import React from "react";
 import {render, fireEvent, screen} from "@testing-library/react";
 import OptionRadioButtonLayout from "./OptionRadioButton";
 
-it("given test props, render with value displayed and name set", () => {
+it("given test props including mock refFunction, render with props displayed and function called", () => {
   const mockRefFunction = jest.fn();
 
   render(

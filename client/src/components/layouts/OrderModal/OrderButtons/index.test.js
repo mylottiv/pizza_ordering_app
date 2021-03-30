@@ -1,15 +1,16 @@
 import React from "react";
 import {render, screen} from "@testing-library/react";
-import ProfileLayout from "./";
+import OrderButtonsLayout from "./";
 
-it("given test children elements and name prop, renders children and name", () => {
+it("given three test children elements, renders children", () => {
   render(
-    <ProfileLayout name={"Test Name!"}>
+    <OrderButtonsLayout>
       <div>Child1</div>
       <div>Child2</div>
-    </ProfileLayout>
+      <div>Child3</div>
+    </OrderButtonsLayout>
   );
-  expect(screen.getByText("Test Name!")).toBeInTheDocument();
   expect(screen.getByText("Child1")).toBeInTheDocument();
   expect(screen.getByText("Child2")).toBeInTheDocument();
+  expect(screen.getByText("Child3")).toBeInTheDocument();
 });

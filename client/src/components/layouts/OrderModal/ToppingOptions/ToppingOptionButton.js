@@ -8,6 +8,7 @@ function ToppingOptionButton({topping, checked, onChange, refFunction}) {
           type="radio"
           className="form-radio"
           name={`${topping}-left`}
+          data-testid={`${topping}-left`}
           defaultChecked={false}
           onChange={onChange}
           value="left"
@@ -19,6 +20,7 @@ function ToppingOptionButton({topping, checked, onChange, refFunction}) {
           type="radio"
           className="form-radio"
           name={`${topping}-whole`}
+          data-testid={`${topping}-whole`}
           defaultChecked={checked}
           onChange={onChange}
           value="whole"
@@ -30,6 +32,7 @@ function ToppingOptionButton({topping, checked, onChange, refFunction}) {
           type="radio"
           className="form-radio"
           name={`${topping}-right`}
+          data-testid={`${topping}-right`}
           defaultChecked={false}
           onChange={onChange}
           value="right"

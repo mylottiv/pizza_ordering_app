@@ -15,7 +15,8 @@ function QuantityButtons({defaultQuantity}) {
     <>
       <QuantityButtonsLayout
         defaultQuantity
-        onClick={() => updateQuantity("add")}
+        addHandler={() => updateQuantity("add")}
+        subHandler={() => updateQuantity("subtract")}
         refFunction={() => register({required: true})}
       />
     </>
