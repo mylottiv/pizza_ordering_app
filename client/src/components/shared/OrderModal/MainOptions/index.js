@@ -1,20 +1,22 @@
 import React from "react";
 import ToppingOptions from "./ToppingOptions";
 import CouponProductSlot from "./CouponProductSlot";
+import MainOptionsLayout from "../../../layouts/OrderModal/MainOptions";
+
 function MainOptions({content}) {
-  const {couponName, choices} = content;
-  console.log("choices test", choices);
-  const itemOptions =
-    choices[0] && choices[0].toppings
-      ? choices.map(category => (
+  const {couponName, toppings} = content;
+
+  const itemIngredients =
+    toppings[0] && toppings[0].ingredients
+      ? toppings.map(topping => (
           <ToppingOptions
-            key={category.category}
-            type={category.category}
-            options={category.toppings}
+            key={topping.name}
+            type={topping.name}
+            options={topping.ingredients}
           />
         ))
-      : choices
-      ? choices.map((item, index) => {
+      : toppings
+      ? toppings.map((item, index) => {
           return (
             <CouponProductSlot
               key={index}
@@ -24,9 +26,9 @@ function MainOptions({content}) {
             />
           );
         })
-      : choices;
+      : toppings;
 
-  return <>{itemOptions}</>;
+  return <MainOptionsLayout>{itemIngredients}</MainOptionsLayout>;
 }
 
 export default MainOptions;
