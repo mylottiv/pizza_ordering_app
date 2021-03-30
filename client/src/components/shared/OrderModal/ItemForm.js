@@ -7,7 +7,7 @@ import OrderButtons from "./OrderButtons";
 
 function ItemForm({item, onSubmit}) {
   const {handleSubmit} = useFormContext();
-  const name = item.couponName !== undefined ? item.couponName : item.name;
+  const name = item.couponName ? item.couponName : item.name;
   console.log("item form test,", item.choices, item.description);
   const profileContent = item.choices
     ? item.choices
@@ -17,8 +17,8 @@ function ItemForm({item, onSubmit}) {
 
   const mainContent = {
     couponName: item.couponName ? item.couponName : "",
-    choices: item.ingredients
-      ? item.ingredients
+    toppings: item.toppings
+      ? item.toppings
       : item.couponName
       ? item.itemSlots.options
       : false,
@@ -29,8 +29,8 @@ function ItemForm({item, onSubmit}) {
       // Probably not functional for coupon forms as is
       onSubmit={handleSubmit(onSubmit(item))}
     >
-      <OrderModalLayout name={name}>
-        <ItemProfile content={profileContent} />
+      <OrderModalLayout>
+        <ItemProfile name={name} content={profileContent} />
         <MainOptions content={mainContent} />
         <OrderButtons></OrderButtons>
       </OrderModalLayout>

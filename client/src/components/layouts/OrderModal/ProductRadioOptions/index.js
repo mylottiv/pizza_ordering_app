@@ -1,6 +1,6 @@
 import React from "react";
 
-function ProductRadioOptionsLayout({type, children}) {
+function ProductRadioOptions({type, children}) {
   return (
     <div className="flex flex-row my-6">
       <div className="flex-1 flex-col text-center">
@@ -11,4 +11,4 @@ function ProductRadioOptionsLayout({type, children}) {
   );
 }
 
-export default ProductRadioOptionsLayout;
+export default ProductRadioOptions;

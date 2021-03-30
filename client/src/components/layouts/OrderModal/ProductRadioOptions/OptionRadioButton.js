@@ -1,6 +1,6 @@
 import React from "react";
 
-function OptionRadioButtonLayout({type, value, checked, onChange, refFunction}) {
+function OptionRadioButton({type, value, checked, onChange, refFunction}) {
   return (
     <div className="flex flex-col ml-4">
       <label className="inline-flex items-center">
@@ -20,4 +20,4 @@ function OptionRadioButtonLayout({type, value, checked, onChange, refFunction}) 
   );
 }
 
-export default OptionRadioButtonLayout;
+export default OptionRadioButton;
