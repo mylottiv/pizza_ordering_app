@@ -7,11 +7,7 @@ function OrderButtons({children}) {
         <div className="flex flex-row">
           <span className="flex-1 text-center">Quantity</span>
         </div>
-        <div className="flex flex-row">
-          <div className="flex-1 inline-flex items-center justify-center my-2">
-            {children}
-          </div>
-        </div>
+        <div className="flex flex-row">{children}</div>
         <div className="flex flex-row justify-center">
           <button
             type="submit"
