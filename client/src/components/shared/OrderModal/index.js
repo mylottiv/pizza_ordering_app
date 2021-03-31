@@ -1,25 +1,42 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import {useSelector, useDispatch} from "react-redux";
 import {ModalOrderFormContext} from "../../";
 import ItemForm from "./ItemForm";
 import submitHandlerFactory from "./submitHandlerFactory";
 
 function OrderModal(props) {
-  const storeData = useSelector(state => state.storeData);
-  const modalState = useSelector(state => state.modal);
-  const wizardState = useSelector(state => state.orderWizard);
+  const [retrievedData, setRetrievedData] = useState();
+  // const storeData = useSelector(state => state.storeData);
+  const {open, coupon} = useSelector(state => state.modal);
+  const {openCoupon, openCouponName, openCouponSlotIndex, selectedItem} = useSelector(
+    state => state.orderWizard
+  );
+  console.log("Reducer Selected Item", selectedItem);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(
+        `http://localhost:3020/api/product/${selectedItem.productID}`,
+        {
+          method: "GET",
+        }
+      );
+      const productFields = await response.json();
+      console.log("async test orderModal", productFields);
+      setRetrievedData(productFields);
+    };
+    selectedItem.productID > 1 && fetchData();
+  }, [selectedItem]);
   const dispatch = useDispatch();
-  console.log("test", wizardState);
-  const {open, coupon} = modalState;
-  const {openCoupon, openCouponName, openCouponSlotIndex, selectedItem} = wizardState;
+  console.log("Was Data Fetched?", retrievedData);
 
   // Coupon info stored in selectedItem while Product info must be fetched from storeData
-  const itemGetter = () =>
-    coupon
-      ? selectedItem
-      : storeData.menu[selectedItem.type][selectedItem.categoryIndex].products[
-          selectedItem.productIndex
-        ];
+  // const itemGetter = () =>
+  //   coupon
+  //     ? selectedItem
+  //     : storeData.menu[selectedItem.type][selectedItem.categoryIndex].products[
+  //         selectedItem.productIndex
+  //       ];
 
   // If product is opened from inside a coupon, reference for submit handler will be different
   const couponRef =
@@ -29,7 +46,7 @@ function OrderModal(props) {
           open: openCoupon,
           couponSlotIndex: openCouponSlotIndex,
         }
-      : undefined;
+      : {couponName: "", open: false, couponSlotIndex: -1};
 
   return (
     <>
@@ -38,10 +55,8 @@ function OrderModal(props) {
           <div className="flex-1 flex-row p-5 rounded bg-blue-100 h-full overflow-y-scroll">
             <ModalOrderFormContext>
               <ItemForm
-                item={(() => {
-                  console.log("itemGetter test", itemGetter());
-                  return itemGetter();
-                })()}
+                // item={retrievedData ? retrievedData : debugData}
+                item={retrievedData ? retrievedData : false}
                 onSubmit={submitHandlerFactory(dispatch, couponRef)}
               />
             </ModalOrderFormContext>

@@ -1,10 +1,7 @@
 import allActions from "../../../store/actions";
 
 // Product will be passed on render inside ProductItemForm
-const submitHandlerFactory = (
-  dispatch,
-  couponRef = {couponName: "", open: false, couponSlotIndex: -1}
-) => item => data => {
+const submitHandlerFactory = (dispatch, couponRef) => item => data => {
   const {couponName, open, couponSlotIndex} = couponRef;
   console.log("couponRef", couponRef, couponName, open);
 
@@ -14,17 +11,23 @@ const submitHandlerFactory = (
     fields: data,
   };
   console.log("submit data", newItem);
+  const actionTest = allActions.cart[`addItemTo${open ? "Coupon" : "Cart"}`](
+    open
+      ? {
+          newItem: newItem,
+          couponRef: {couponName: couponName, couponSlotIndex: couponSlotIndex},
+        }
+      : newItem
+  );
+  console.log("Action Process Test", actionTest);
   dispatch(
     allActions.cart[`addItemTo${open ? "Coupon" : "Cart"}`](
-      // IIE unless the ternary operator doesnt require this wrapping
-      (() => {
-        return open
-          ? {
-              newItem: newItem,
-              couponRef: {couponName: couponName, couponSlotIndex: couponSlotIndex},
-            }
-          : newItem;
-      })()
+      open
+        ? {
+            newItem: newItem,
+            couponRef: {couponName: couponName, couponSlotIndex: couponSlotIndex},
+          }
+        : newItem
     )
   );
 };

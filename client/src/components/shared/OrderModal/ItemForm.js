@@ -7,21 +7,23 @@ import OrderButtons from "./OrderButtons";
 
 function ItemForm({item, onSubmit}) {
   const {handleSubmit} = useFormContext();
-  const name = item.couponName ? item.couponName : item.name;
-  console.log("item form test,", item.choices, item.description);
-  const profileContent = item.choices
-    ? item.choices
-    : item.description
-    ? item.description
-    : false;
+
+  const name = item && item.couponName ? item.couponName : item ? item.name : false;
+  const profileContent =
+    item && item.choices
+      ? item.choices
+      : item && item.description
+      ? item.description
+      : false;
 
   const mainContent = {
-    couponName: item.couponName ? item.couponName : "",
-    toppings: item.toppings
-      ? item.toppings
-      : item.couponName
-      ? item.itemSlots.options
-      : false,
+    couponName: item && item.couponName ? item.couponName : "",
+    toppings:
+      item && item.toppings
+        ? item.toppings
+        : item && item.couponName
+        ? item.itemSlots.options
+        : false,
   };
 
   return (
@@ -32,7 +34,7 @@ function ItemForm({item, onSubmit}) {
       <OrderModalLayout>
         <ItemProfile name={name} content={profileContent} />
         <MainOptions content={mainContent} />
-        <OrderButtons></OrderButtons>
+        <OrderButtons />
       </OrderModalLayout>
     </form>
   );
